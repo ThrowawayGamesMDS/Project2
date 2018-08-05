@@ -12,6 +12,8 @@ TagManager:
   - Turret
   - enemy
   - Goal
+  - Undefined
+  - Enemy
   layers:
   - Default
   - TransparentFX
