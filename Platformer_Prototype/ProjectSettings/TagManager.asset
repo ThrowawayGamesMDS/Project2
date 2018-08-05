@@ -4,18 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Fplatform
-  - Mplatform
-  - Splatform
-  - Lplatform
-  - Death
   - Ground
   - AMMO_BOX
   - WEAPON_HANDLER
   - PlayerCentre
   - Weapon
   - Turret
-  - Eplatform
+  - enemy
+  - Goal
   layers:
   - Default
   - TransparentFX
