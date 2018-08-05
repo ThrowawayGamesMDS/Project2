@@ -162,7 +162,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1600842792024738}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 119.6, y: 5.7551403, z: 1.37}
+  m_LocalPosition: {x: -5.393751, y: 0.5, z: -7.1142406}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4088880547507744}
@@ -524,18 +524,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9948d8daf9e6c44b577daae5632d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAIMode: 0
+  myAIMode: 2
   playerCentre: {fileID: 0}
-  damping: 10
+  damping: 100
   endofturret: {fileID: 4231299325860864}
-  fireRate: 0.1
-  turretAccuracy: 1.7
+  fireRate: 0.2
+  turretAccuracy: 0
   gunShotSound: {fileID: 82369448550493326}
   ball: {fileID: 1224317887970998, guid: 50ebd0b135deae846823ca9dded335f1, type: 2}
   playerObj: {fileID: 0}
   playerForce: 30
   f_TurretHealth: 100
   flames: {fileID: 1298588413719758, guid: ff1a30a12357ff644b9c5ea0a8f9a0e7, type: 2}
+  Targets: []
 --- !u!135 &135355536587290900
 SphereCollider:
   m_ObjectHideFlags: 1
