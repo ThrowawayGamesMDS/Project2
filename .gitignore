@@ -33,4 +33,5 @@ sysinfo.txt
 
 # Builds
 *.apk
-*.unitypackage
+Platformer_Prototype/Assets/Prefabs/Elevator_Stand.prefab.meta
+Platformer_Prototype/Assets/Prefabs/Elevator_Stand.prefab.meta
