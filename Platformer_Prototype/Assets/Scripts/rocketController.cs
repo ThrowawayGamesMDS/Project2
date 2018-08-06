@@ -8,14 +8,11 @@ public class rocketController : MonoBehaviour {
     public MeshRenderer mr;
     public float radius;
     public float power;
-    public GameObject playerObj;
     public GameObject explosion;
-    public float playerImpactStrength;
     [SerializeField] private bool isMoving;
 	// Use this for initialization
 	void Start () {
         isMoving = true;
-        playerObj = GameObject.Find("playercentre");
         Invoke("Explode", 4);
 	}
 	
@@ -45,28 +42,22 @@ public class rocketController : MonoBehaviour {
         mr.enabled = false;
         gameObject.GetComponent<BoxCollider>().enabled = false;
         Instantiate(explosion, transform.position, Quaternion.identity);
-        Vector3 rayOrigin = transform.position;
-        Vector3 rayDirection = playerObj.transform.position - transform.position;
-        RaycastHit rayhit;
-        if (Physics.Raycast(transform.position, rayDirection, out rayhit, 100, 1 << 8))
-        {
-            Debug.Log(rayhit.distance);
-            if (rayhit.distance < 6)
-            {
-                //create explosion
-            }
-        }
+        
 
         Vector3 explosionPos = transform.position;
         Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
         foreach (Collider hit in colliders)
         {
+            if(hit.tag == "Enemy")
+            {
+                hit.SendMessage("EnemyShot", 200f);
+            }
             Rigidbody rb = hit.GetComponent<Rigidbody>();
 
             if (rb != null)
             {
-                rb.AddExplosionForce(power, explosionPos, radius, 3.0F);
 
+                rb.AddExplosionForce(power, explosionPos, radius, 3.0F);
             }
 
         }

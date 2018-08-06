@@ -7,7 +7,6 @@ public class TurretAggro : MonoBehaviour
 
     public enum eAIMode { Idle, Alert, Aggro };
     public eAIMode myAIMode;
-    public GameObject playerCentre;
     public float damping;
     public Transform endofturret;
     public float fireRate;
@@ -15,7 +14,6 @@ public class TurretAggro : MonoBehaviour
     private float turretCooldown;
     public AudioSource gunShotSound;
     public GameObject ball;
-    public GameObject playerObj;
     public float playerForce;
     public float f_TurretHealth;
     public GameObject flames;
@@ -34,14 +32,13 @@ public class TurretAggro : MonoBehaviour
     {
         if(Targets.Count > 0)
         {
-            //if (Targets[0].GetComponent<EnemyStats>().m_fEnemyHealth <= 0)
             if(Targets[0] == null)
             {
-                //Destroy(Targets[0]);
                 Targets.RemoveAt(0);
-                
             }
         }
+
+
         if(Targets.Count <= 0)
         {
             myAIMode = eAIMode.Idle;

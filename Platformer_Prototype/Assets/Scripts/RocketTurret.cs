@@ -5,7 +5,6 @@ using UnityEngine;
 public class RocketTurret : MonoBehaviour {
     public enum eAIMode { Idle, Alert, Aggro };
     public eAIMode myAIMode;
-    public GameObject playerCentre;
     public float damping;
     public Transform endofturret;
     public float fireRate;
@@ -13,9 +12,9 @@ public class RocketTurret : MonoBehaviour {
     private float turretCooldown;
     public AudioSource gunShotSound;
     public GameObject missile;
-    public GameObject playerObj;
     public float f_TurretHealth;
     public GameObject flames;
+    public List<GameObject> Targets;
 
     // Use this for initialization
     void Start()
@@ -29,6 +28,17 @@ public class RocketTurret : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if (Targets.Count > 0)
+        {
+            //if (Targets[0].GetComponent<EnemyStats>().m_fEnemyHealth <= 0)
+            if (Targets[0] == null)
+            {
+                //Destroy(Targets[0]);
+                Targets.RemoveAt(0);
+
+            }
+        }
+
         switch (myAIMode)
         {
             case eAIMode.Idle:
@@ -43,46 +53,49 @@ public class RocketTurret : MonoBehaviour {
                 }
             case eAIMode.Aggro:
                 {
-                    Vector3 lookpos = playerCentre.transform.position - transform.position;
-                    //lookpos.y = 0;
-                    Quaternion rotation = Quaternion.LookRotation(lookpos);
-                    transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
-
-                    if (Time.time > turretCooldown)
+                    if (Targets[0] != null)
                     {
-                        Vector3 rayOrigin = endofturret.position;
-                        Vector3 rayDirection = playerCentre.transform.position - endofturret.position;
-                        RaycastHit hit;
-                        if (Physics.Raycast(endofturret.position, rayDirection, out hit, 100))
+                        Vector3 lookpos = Targets[0].transform.position - transform.position;
+                        //lookpos.y = 0;
+                        Quaternion rotation = Quaternion.LookRotation(lookpos);
+                        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
+
+                        if (Time.time > turretCooldown)
                         {
-                            if (hit.transform.tag == "Player")
+                            Vector3 rayOrigin = endofturret.position;
+                            Vector3 rayDirection = Targets[0].transform.position - endofturret.position;
+                            RaycastHit hit;
+                            if (Physics.Raycast(endofturret.position, rayDirection, out hit, 100))
                             {
-                                rayDirection.x += Random.Range(-turretAccuracy, turretAccuracy);
-                                rayDirection.z += Random.Range(-turretAccuracy, turretAccuracy);
-                                rayDirection.y += Random.Range(-turretAccuracy, turretAccuracy);
-                                if (Physics.Raycast(endofturret.position, rayDirection, out hit, 100))
+                                if (hit.transform.tag == "Enemy")
                                 {
-                                    Debug.DrawRay(endofturret.position, rayDirection, Color.yellow);
-                                    //Debug.Log(hit.transform.name);
-                                    CheckHit(hit, rayDirection);
+                                    rayDirection.x += Random.Range(-turretAccuracy, turretAccuracy);
+                                    rayDirection.z += Random.Range(-turretAccuracy, turretAccuracy);
+                                    rayDirection.y += Random.Range(-turretAccuracy, turretAccuracy);
+                                    if (Physics.Raycast(endofturret.position, rayDirection, out hit, 100))
+                                    {
+                                        Debug.DrawRay(endofturret.position, rayDirection, Color.yellow);
+                                        //Debug.Log(hit.transform.name);
+                                        CheckHit(hit, rayDirection);
 
-                                    ////////////////////////////////////////////
-                                    //draw raycast if player is in view, instantiate rocket that travels in direction of rayDirection,
-                                    //when collides creates physics explosion force and makes raycast towards player with range of around 5
-                                    //if it hits then addimpact to player in direction of explosion ray and sendmessage-playershot with damage multiplied by 
-                                    //distance to explosion normalized
-                                    ///////////////////////////////////////////
+                                        ////////////////////////////////////////////
+                                        //draw raycast if player is in view, instantiate rocket that travels in direction of rayDirection,
+                                        //when collides creates physics explosion force and makes raycast towards player with range of around 5
+                                        //if it hits then addimpact to player in direction of explosion ray and sendmessage-playershot with damage multiplied by 
+                                        //distance to explosion normalized
+                                        ///////////////////////////////////////////
 
 
 
+                                    }
+                                    else
+                                    {
+                                        Debug.DrawRay(endofturret.position, rayDirection, Color.white);
+                                        CheckHit(hit, rayDirection);
+                                    }
+                                    gunShotSound.Play();
+                                    turretCooldown = Time.time + fireRate;
                                 }
-                                else
-                                {
-                                    Debug.DrawRay(endofturret.position, rayDirection, Color.white);
-                                    CheckHit(hit, rayDirection);
-                                }
-                                gunShotSound.Play();
-                                turretCooldown = Time.time + fireRate;
                             }
                         }
                     }
@@ -106,18 +119,17 @@ public class RocketTurret : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Enemy")
         {
             myAIMode = eAIMode.Aggro;
-            Debug.Log(myAIMode);
+            Targets.Insert(Targets.Count, other.gameObject);
         }
     }
     void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Enemy")
         {
-            myAIMode = eAIMode.Idle;
-            Debug.Log(myAIMode);
+            Targets.Remove(other.gameObject);
         }
     }
 
