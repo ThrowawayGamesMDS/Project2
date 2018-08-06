@@ -314,11 +314,10 @@ MonoBehaviour:
   missileSpeed: 15
   audiosrc: {fileID: 82811982050971674}
   mr: {fileID: 23439651218993180}
-  radius: 10
+  radius: 4
   power: 1000
-  playerObj: {fileID: 0}
+  damage: 50
   explosion: {fileID: 1388387591576220, guid: d9c753798bc987941b0b5d341018ac91, type: 2}
-  playerImpactStrength: 400
   isMoving: 0
 --- !u!198 &198170965481744770
 ParticleSystem:

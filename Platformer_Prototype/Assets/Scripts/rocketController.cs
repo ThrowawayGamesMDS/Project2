@@ -8,6 +8,7 @@ public class rocketController : MonoBehaviour {
     public MeshRenderer mr;
     public float radius;
     public float power;
+    public float damage;
     public GameObject explosion;
     [SerializeField] private bool isMoving;
 	// Use this for initialization
@@ -50,7 +51,7 @@ public class rocketController : MonoBehaviour {
         {
             if(hit.tag == "Enemy")
             {
-                hit.SendMessage("EnemyShot", 200f);
+                hit.SendMessage("EnemyShot", damage);
             }
             Rigidbody rb = hit.GetComponent<Rigidbody>();
 

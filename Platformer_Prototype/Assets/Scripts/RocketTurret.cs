@@ -38,17 +38,25 @@ public class RocketTurret : MonoBehaviour {
 
             }
         }
+        if (Targets.Count <= 0)
+        {
+            myAIMode = eAIMode.Idle;
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Debug.Log(Targets.Count);
+        }
 
         switch (myAIMode)
         {
             case eAIMode.Idle:
                 {
-                    if (transform.eulerAngles.x != 0)
+                    /*if (transform.eulerAngles.x != 0)
                     {
                         transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, transform.eulerAngles.z);
                     }
 
-                    transform.Rotate(0, 10 * Time.deltaTime, 0);
+                    transform.Rotate(0, 10 * Time.deltaTime, 0);*/
                     break;
                 }
             case eAIMode.Aggro:
