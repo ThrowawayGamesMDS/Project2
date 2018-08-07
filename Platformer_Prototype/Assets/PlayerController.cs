@@ -91,8 +91,9 @@ public class PlayerController : MonoBehaviour
                         return;
                     }
                 }
-                m_goPlacedTurrets[m_iTurretsPlaced] = Instantiate(m_goCurrentlyPlacing, m_vec3Pos, Quaternion.identity) as GameObject;
-                m_iTurretsPlaced += 1;
+                m_goPlacedTurrets[m_iTurretsPlaced] = Instantiate(m_goPossibleTurrets[m_iCurrentlyPlacing], m_vec3Pos, Quaternion.identity) as GameObject;
+               //m_goPlacedTurrets[m_iTurretsPlaced] = Instantiate(m_goCurrentlyPlacing, m_vec3Pos, Quaternion.identity) as GameObject;
+               m_iTurretsPlaced += 1;
             }
         }
 
@@ -117,7 +118,7 @@ public class PlayerController : MonoBehaviour
                 print("CANT PLACE TURRET HERE!");
                 return;
             }
-            else // fucking nooby will always call
+            else
             {
                 Destroy(m_goPlacementDefault);
                 m_goPlacementDefault = Instantiate(m_goTurretPlacementOk[m_iCurrentlyPlacing], _vec3DesiredPos, Quaternion.identity) as GameObject;
@@ -150,7 +151,17 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if(m_ePlayerState == PlayerStates.PLACING)
+        if (Input.GetKeyUp(KeyCode.Alpha1))
+        {
+            m_iCurrentlyPlacing = 0;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Alpha2))
+        {
+            m_iCurrentlyPlacing = 1;
+        }
+
+        if (m_ePlayerState == PlayerStates.PLACING)
         {
             Vector3 pos = Camera.main.transform.position + Camera.main.transform.forward * 5.0f;
             if (pos.y < 0 || pos.y > 0)
