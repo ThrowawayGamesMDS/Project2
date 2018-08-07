@@ -14,6 +14,8 @@ TagManager:
   - Goal
   - Undefined
   - Enemy
+  - Splatform
+  - Mplatform
   layers:
   - Default
   - TransparentFX
@@ -24,7 +26,7 @@ TagManager:
   - 
   - 
   - player
-  - 
+  - upgrade
   - 
   - 
   - 
