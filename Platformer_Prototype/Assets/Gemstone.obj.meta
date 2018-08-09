@@ -1,26 +1,22 @@
 fileFormatVersion: 2
-guid: 1ba911e247169e74fb84f3f62483038d
+guid: 5f83a8b257a138140a8bff079b7220b0
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: CrateBroken5_CrateBrokenPieces
-    100002: //RootNode
-    400000: CrateBroken5_CrateBrokenPieces
-    400002: //RootNode
-    2300000: CrateBroken5_CrateBrokenPieces
-    3300000: CrateBroken5_CrateBrokenPieces
-    4300000: CrateBroken5_CrateBrokenPieces
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: CrateBroken5_CrateBrokenPiecesMat
-    second: {fileID: 2100000, guid: 4e56cf22645dffe4da66d64d00278108, type: 2}
+    100000: //RootNode
+    100002: Gemstone1
+    400000: //RootNode
+    400002: Gemstone1
+    2100000: initialShadingGroup
+    2300000: Gemstone1
+    3300000: Gemstone1
+    4300000: Gemstone1
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

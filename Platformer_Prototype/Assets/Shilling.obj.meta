@@ -1,26 +1,22 @@
 fileFormatVersion: 2
-guid: e099ee400c96816429816a03cc53dd29
+guid: 49e1bb187b19ce442b00a45d0fd95409
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: CrateBroken4_CrateBrokenPieces
-    100002: //RootNode
-    400000: CrateBroken4_CrateBrokenPieces
-    400002: //RootNode
-    2300000: CrateBroken4_CrateBrokenPieces
-    3300000: CrateBroken4_CrateBrokenPieces
-    4300000: CrateBroken4_CrateBrokenPieces
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: CrateBroken4_CrateBrokenPiecesMat
-    second: {fileID: 2100000, guid: 43938e5e035fa6346af3a521687b3c64, type: 2}
+    100000: //RootNode
+    100002: Shilling2
+    400000: //RootNode
+    400002: Shilling2
+    2100000: Shilling_initialShadingGroup
+    2300000: Shilling2
+    3300000: Shilling2
+    4300000: Shilling2
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

@@ -1,26 +1,21 @@
 fileFormatVersion: 2
-guid: 3ee436fb6ff8ec14abffbdc00b9a10b6
+guid: 33a6bdf42eb18ec44925b33aedbfbe31
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: CrateBroken3_CrateBrokenPieces
-    100002: //RootNode
-    400000: CrateBroken3_CrateBrokenPieces
-    400002: //RootNode
-    2300000: CrateBroken3_CrateBrokenPieces
-    3300000: CrateBroken3_CrateBrokenPieces
-    4300000: CrateBroken3_CrateBrokenPieces
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: CrateBroken3_CrateBrokenPiecesMat
-    second: {fileID: 2100000, guid: 5cbddbb04690f5c4c8a83c729a0b1c62, type: 2}
+    100000: //RootNode
+    400000: //RootNode
+    2100000: log2
+    2100002: log1
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: PallisadeWall
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

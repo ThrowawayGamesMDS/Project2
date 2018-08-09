@@ -1,26 +1,81 @@
 fileFormatVersion: 2
-guid: c8aeea648044f19418d7406bf053c0aa
+guid: a5d1453847da35647bb89dc9dc0694a7
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: CrateBroken7_CrateBrokenPieces
-    100002: //RootNode
-    400000: CrateBroken7_CrateBrokenPieces
-    400002: //RootNode
-    2300000: CrateBroken7_CrateBrokenPieces
-    3300000: CrateBroken7_CrateBrokenPieces
-    4300000: CrateBroken7_CrateBrokenPieces
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: CrateBroken7_CrateBrokenPiecesMat
-    second: {fileID: 2100000, guid: d61bce978bccb184090536aca00f0447, type: 2}
+    100000: ArmLower
+    100002: ArmUpper
+    100004: //RootNode
+    100006: DeadMansTurret
+    100008: IndexL1
+    100010: IndexL2
+    100012: IndexM
+    100014: IndexT1
+    100016: IndexT2
+    100018: MiddleL1
+    100020: MiddleL2
+    100022: MiddleM
+    100024: MiddleT1
+    100026: MiddleT2
+    100028: Palm
+    100030: PinkyL1
+    100032: PinkyL2
+    100034: PinkyM
+    100036: PinkyT1
+    100038: PinkyT2
+    100040: RingL1
+    100042: RingL2
+    100044: RingM
+    100046: RingT1
+    100048: RingT2
+    100050: Root
+    100052: ThumbL1
+    100054: ThumbL2
+    100056: ThumbM
+    100058: ThumbT
+    100060: Wrist
+    400000: ArmLower
+    400002: ArmUpper
+    400004: //RootNode
+    400006: DeadMansTurret
+    400008: IndexL1
+    400010: IndexL2
+    400012: IndexM
+    400014: IndexT1
+    400016: IndexT2
+    400018: MiddleL1
+    400020: MiddleL2
+    400022: MiddleM
+    400024: MiddleT1
+    400026: MiddleT2
+    400028: Palm
+    400030: PinkyL1
+    400032: PinkyL2
+    400034: PinkyM
+    400036: PinkyT1
+    400038: PinkyT2
+    400040: RingL1
+    400042: RingL2
+    400044: RingM
+    400046: RingT1
+    400048: RingT2
+    400050: Root
+    400052: ThumbL1
+    400054: ThumbL2
+    400056: ThumbM
+    400058: ThumbT
+    400060: Wrist
+    2100000: StingrayPBS1
+    4300000: DeadMansTurret
+    7400000: Fire-Reload
+    9500000: //RootNode
+    13700000: DeadMansTurret
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -90,7 +145,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

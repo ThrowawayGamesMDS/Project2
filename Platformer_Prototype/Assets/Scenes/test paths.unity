@@ -399,7 +399,7 @@ Prefab:
     - target: {fileID: 114807789424506296, guid: ab6991e6bbdefb6419a439d94069de1e,
         type: 2}
       propertyPath: speed
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114589383342019036, guid: ab6991e6bbdefb6419a439d94069de1e,
         type: 2}
@@ -596,6 +596,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &465596824 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1600842792024738, guid: 66f6a15b8c02c004ab6232b5b000daff,
+    type: 2}
+  m_PrefabInternal: {fileID: 768941985}
+--- !u!208 &465596825
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 465596824}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &499225084
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,8 +643,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cea07b5ee2251245b6fede67d06c55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemys: {fileID: 1937182723588562, guid: ab6991e6bbdefb6419a439d94069de1e, type: 2}
+  enemys: []
   des: {fileID: 1869993548}
+  enemiesToCome: []
 --- !u!4 &499225086
 Transform:
   m_ObjectHideFlags: 0
@@ -632,7 +653,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 499225084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.91, y: 0.51, z: 4.04}
+  m_LocalPosition: {x: -10.54, y: 0.51, z: 11.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -922,6 +943,15 @@ Prefab:
     - target: {fileID: 1764565115133426, guid: 66f6a15b8c02c004ab6232b5b000daff, type: 2}
       propertyPath: m_TagString
       value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073625389227242, guid: 66f6a15b8c02c004ab6232b5b000daff, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114304066826578346, guid: 66f6a15b8c02c004ab6232b5b000daff,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66f6a15b8c02c004ab6232b5b000daff, type: 2}

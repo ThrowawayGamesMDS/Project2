@@ -1,26 +1,78 @@
 fileFormatVersion: 2
-guid: 6d92882629ffa5749ad793a6cf683265
+guid: 7d7a36e2ed8e56943a819ddf8aebd472
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: CrateBroken12_CrateBrokenPieces
-    100002: //RootNode
-    400000: CrateBroken12_CrateBrokenPieces
-    400002: //RootNode
-    2300000: CrateBroken12_CrateBrokenPieces
-    3300000: CrateBroken12_CrateBrokenPieces
-    4300000: CrateBroken12_CrateBrokenPieces
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: CrateBroken12_CrateBrokenPiecesMat
-    second: {fileID: 2100000, guid: 4803d8ca8ffe98246ae82a2b94394167, type: 2}
+    100000: //RootNode
+    100002: BallistaBase
+    100004: BallistaBones
+    100006: BallistaLower
+    100008: BallistaUpper
+    100010: Bolt
+    100012: Bolt 1
+    100014: Crank
+    100016: Crank 1
+    100018: Load
+    100020: Load 1
+    100022: PallisadeWall
+    100024: Root
+    100026: Rope
+    100028: RopeCenter
+    100030: RopeL
+    100032: RopeR
+    100034: Stand
+    100036: Stand 1
+    100038: Winch
+    100040: Winch 1
+    400000: //RootNode
+    400002: BallistaBase
+    400004: BallistaBones
+    400006: BallistaLower
+    400008: BallistaUpper
+    400010: Bolt
+    400012: Bolt 1
+    400014: Crank
+    400016: Crank 1
+    400018: Load
+    400020: Load 1
+    400022: PallisadeWall
+    400024: Root
+    400026: Rope
+    400028: RopeCenter
+    400030: RopeL
+    400032: RopeR
+    400034: Stand
+    400036: Stand 1
+    400038: Winch
+    400040: Winch 1
+    2100000: log2
+    2100002: log1
+    2100004: lambert1
+    2300000: PallisadeWall
+    3300000: PallisadeWall
+    4300000: PallisadeWall
+    4300002: Stand
+    4300004: Winch
+    4300006: Rope
+    4300008: Crank
+    4300010: Bolt
+    4300012: Load
+    4300014: BallistaBase
+    7400000: Fire-Reload
+    9500000: //RootNode
+    13700000: BallistaBase
+    13700002: Bolt
+    13700004: Crank
+    13700006: Load
+    13700008: Rope
+    13700010: Stand
+    13700012: Winch
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -90,7 +142,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

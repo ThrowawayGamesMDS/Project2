@@ -1,26 +1,37 @@
 fileFormatVersion: 2
-guid: 067349ada217581438c73446b2a38a23
+guid: d7ac372c6288afd4a8978a170d098838
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: CrateBroken1_CrateBrokenPieces
-    100002: //RootNode
-    400000: CrateBroken1_CrateBrokenPieces
-    400002: //RootNode
-    2300000: CrateBroken1_CrateBrokenPieces
-    3300000: CrateBroken1_CrateBrokenPieces
-    4300000: CrateBroken1_CrateBrokenPieces
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: CrateBroken1_CrateBrokenPiecesMat
-    second: {fileID: 2100000, guid: 67a5ab48aa606b64abba24b4c8b082e7, type: 2}
+    100000: //RootNode
+    100002: BallistaBones
+    100004: Bolt
+    100006: Crank
+    100008: Crank 1
+    100010: Load
+    100012: Root
+    100014: RopeCenter
+    100016: Winch
+    400000: //RootNode
+    400002: BallistaBones
+    400004: Bolt
+    400006: Crank
+    400008: Crank 1
+    400010: Load
+    400012: Root
+    400014: RopeCenter
+    400016: Winch
+    2100000: log1
+    4300000: Crank
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Crank
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -90,7 +101,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
