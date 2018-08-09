@@ -33,6 +33,14 @@ public class PlayerController : MonoBehaviour
         m_goPlacementDefault = m_goTurretPlacementOk[m_iCurrentlyPlacing];
     }
 
+
+    void Pickup(int amount)
+    {
+        PublicStats.g_fResourceCount += amount;
+        print(PublicStats.g_fResourceCount);
+    }
+
+
     RaycastHit GenerateRayCast(float _fDistanceOfRay)
     {
         RaycastHit _rh;
