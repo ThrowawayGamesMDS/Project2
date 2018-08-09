@@ -16,6 +16,7 @@ TagManager:
   - Enemy
   - Splatform
   - Mplatform
+  - Currency
   layers:
   - Default
   - TransparentFX
