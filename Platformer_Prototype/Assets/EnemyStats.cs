@@ -4,7 +4,18 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour {
     public float m_fEnemyHealth;
+    public enum eAIMode { push, attack, other };
+    public eAIMode myAIMode;
+    public List<GameObject> Targets;
+    public List<int> priority;
+    public GameObject currentTarget;
 
+    public float attackrange;
+    public int attackdamage;
+    void Start()
+    {
+        myAIMode = eAIMode.push;
+    }
     void Update()
     {
         if (m_fEnemyHealth <= 0)
@@ -17,4 +28,5 @@ public class EnemyStats : MonoBehaviour {
     {
         m_fEnemyHealth -= damage;
     }
+ 
 }

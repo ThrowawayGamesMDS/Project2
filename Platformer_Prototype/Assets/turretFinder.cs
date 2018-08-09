@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class turretFinder : MonoBehaviour {
-    SphereCollider argoRange;
-  
-	// Use this for initialization
-	void Start () {
-        argoRange = GetComponent<SphereCollider>();
+    //SphereCollider argoRange;
+   
+    // Use this for initialization
+    void Start () {
+        //argoRange = GetComponent<SphereCollider>();
     }
 	
 	// Update is called once per frame
@@ -28,7 +28,7 @@ public class turretFinder : MonoBehaviour {
             {
                 print("hti");
                 GetComponent<enemyWalk>().argro = true;
-                GetComponent<enemyWalk>().argoTo = col.gameObject;
+                //GetComponent<enemyWalk>().argoTo = col.gameObject;
             }
         }
 

@@ -283,6 +283,60 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &199751741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 199751742}
+  - component: {fileID: 199751744}
+  - component: {fileID: 199751743}
+  m_Layer: 0
+  m_Name: target
+  m_TagString: Turret
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &199751742
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 199751741}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1093231934}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &199751743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 199751741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c26b31b9284a14b41af87eb3d11c193a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threat: 1
+--- !u!135 &199751744
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 199751741}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 6
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &318220199
 Prefab:
   m_ObjectHideFlags: 0
@@ -341,6 +395,21 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114807789424506296, guid: ab6991e6bbdefb6419a439d94069de1e,
+        type: 2}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114589383342019036, guid: ab6991e6bbdefb6419a439d94069de1e,
+        type: 2}
+      propertyPath: attackdamage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114589383342019036, guid: ab6991e6bbdefb6419a439d94069de1e,
+        type: 2}
+      propertyPath: attackrange
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 54854388787842276, guid: ab6991e6bbdefb6419a439d94069de1e, type: 2}
@@ -690,7 +759,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 616073732}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dbb615f47e68d5446ab889a7f1e5048f, type: 3}
   m_Name: 
@@ -703,7 +772,7 @@ SphereCollider:
   m_GameObject: {fileID: 616073732}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
@@ -834,6 +903,26 @@ Prefab:
       propertyPath: m_TagString
       value: Turret
       objectReference: {fileID: 0}
+    - target: {fileID: 1621565189152918, guid: 66f6a15b8c02c004ab6232b5b000daff, type: 2}
+      propertyPath: m_TagString
+      value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071893911674142, guid: 66f6a15b8c02c004ab6232b5b000daff, type: 2}
+      propertyPath: m_TagString
+      value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888999350980512, guid: 66f6a15b8c02c004ab6232b5b000daff, type: 2}
+      propertyPath: m_TagString
+      value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 1036534949091430, guid: 66f6a15b8c02c004ab6232b5b000daff, type: 2}
+      propertyPath: m_TagString
+      value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764565115133426, guid: 66f6a15b8c02c004ab6232b5b000daff, type: 2}
+      propertyPath: m_TagString
+      value: Turret
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66f6a15b8c02c004ab6232b5b000daff, type: 2}
   m_IsPrefabParent: 0
@@ -856,6 +945,11 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 165274f5fdf06a647a061d2fd516c5a5, type: 3}
+--- !u!4 &1093231934 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4152275756240126, guid: 66f6a15b8c02c004ab6232b5b000daff,
+    type: 2}
+  m_PrefabInternal: {fileID: 768941985}
 --- !u!1 &1335266999 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1937182723588562, guid: ab6991e6bbdefb6419a439d94069de1e,
