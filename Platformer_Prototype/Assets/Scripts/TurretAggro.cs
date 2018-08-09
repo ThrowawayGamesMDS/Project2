@@ -6,17 +6,22 @@ public class TurretAggro : MonoBehaviour
 {
 
     public enum eAIMode { Idle, Alert, Aggro };
+    public enum eTurretLevel { First, Second, Third, Fourth };
     public eAIMode myAIMode;
+    public eTurretLevel myTurretLvl;
     public float damping;
     public Transform endofturret;
     public float fireRate;
     public float turretAccuracy;
+    public float turretDamage;
     private float turretCooldown;
     public AudioSource gunShotSound;
     public GameObject ball;
     public float playerForce;
     public float f_TurretHealth;
     public GameObject flames;
+    public GameObject upgradeParticle;
+    public float m_fOverallDamage;
     public List <GameObject> Targets;
     // Use this for initialization
     void Start()
@@ -129,9 +134,8 @@ public class TurretAggro : MonoBehaviour
         pInstance.transform.up = hit.normal;
         if (hit.transform.tag == "Enemy")
         {
-            hit.transform.SendMessage("EnemyShot", 5f);
-            
-
+            hit.transform.SendMessage("EnemyShot", turretDamage);
+            m_fOverallDamage += turretDamage;
         }
     }
 
@@ -148,6 +152,32 @@ public class TurretAggro : MonoBehaviour
         f_TurretHealth -= damage;
         print(f_TurretHealth);
     }
+
+    public void UpgradeTo(eTurretLevel lvl)
+    {
+        if (lvl == eTurretLevel.Second)
+        {
+            Instantiate(upgradeParticle, transform.position, upgradeParticle.transform.rotation);
+            turretDamage *= 1.5f;
+            fireRate *= 0.66f;
+            myTurretLvl = eTurretLevel.Second;
+        }
+        if (lvl == eTurretLevel.Third)
+        {
+            Instantiate(upgradeParticle, transform.position, upgradeParticle.transform.rotation);
+            turretDamage *= 1.5f;
+            fireRate *= 0.66f;
+            myTurretLvl = eTurretLevel.Third;
+        }
+        if (lvl == eTurretLevel.Fourth)
+        {
+            Instantiate(upgradeParticle, transform.position, upgradeParticle.transform.rotation);
+            turretDamage *= 1.5f;
+            fireRate *= 0.66f;
+            myTurretLvl = eTurretLevel.Fourth;
+        }
+    }
+
 
 
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class RocketTurret : MonoBehaviour {
     public enum eAIMode { Idle, Alert, Aggro };
     public eAIMode myAIMode;
+    public enum eTurretLevel { First, Second, Third, Fourth };
+    public eTurretLevel myTurretLvl;
     public float damping;
     public Transform endofturret;
     public float fireRate;
@@ -14,6 +16,7 @@ public class RocketTurret : MonoBehaviour {
     public GameObject missile;
     public float f_TurretHealth;
     public GameObject flames;
+    public GameObject upgradeParticle;
     public List<GameObject> Targets;
 
     // Use this for initialization
@@ -151,6 +154,31 @@ public class RocketTurret : MonoBehaviour {
     {
         f_TurretHealth -= damage;
         print(f_TurretHealth);
+    }
+
+    public void UpgradeTo(eTurretLevel lvl)
+    {
+        if (lvl == eTurretLevel.Second)
+        {
+            Instantiate(upgradeParticle, transform.position, upgradeParticle.transform.rotation);
+            //turretDamage += turretDamage;
+            fireRate *= 0.5f;
+            myTurretLvl = eTurretLevel.Second;
+        }
+        if (lvl == eTurretLevel.Third)
+        {
+            Instantiate(upgradeParticle, transform.position, upgradeParticle.transform.rotation);
+            //turretDamage += turretDamage;
+            fireRate *= 0.5f;
+            myTurretLvl = eTurretLevel.Third;
+        }
+        if (lvl == eTurretLevel.Fourth)
+        {
+            Instantiate(upgradeParticle, transform.position, upgradeParticle.transform.rotation);
+            //turretDamage += turretDamage;
+            fireRate *= 0.5f;
+            myTurretLvl = eTurretLevel.Fourth;
+        }
     }
 
 }

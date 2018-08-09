@@ -53,6 +53,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4664553285629078}
+  - component: {fileID: 114065555786053970}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Untagged
@@ -300,6 +301,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &114065555786053970
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1353528840363638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05f95b7986683a84381465bce02db3a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 8
 --- !u!114 &114326437884046960
 MonoBehaviour:
   m_ObjectHideFlags: 1
