@@ -3,22 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ManualSpawner : MonoBehaviour {
-    public GameObject obj;
+    public GameObject Grunt;
+    public GameObject Tank;
+    public GameObject Kamikazi;
     public float timer;
     public bool isManual;
     private bool hasInvoked;
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            hasInvoked = false;
+        }
         if(isManual)
         {
             if (Input.GetKeyDown(KeyCode.L))
             {
-                Instantiate(obj, transform.position, transform.rotation);
+                print(RoundSystem.g_iGruntsThisRound);
+                Instantiate(Grunt, transform.position, transform.rotation);
             }
         }
         else
@@ -27,15 +30,40 @@ public class ManualSpawner : MonoBehaviour {
             {
                 if(!hasInvoked)
                 {
-                    InvokeRepeating("Spawn", 0, timer);
                     hasInvoked = true;
+                    StartCoroutine(SpawnTank());
                 }
+                
             }
         }
 	}
 
-    void Spawn()
+    IEnumerator SpawnGrunt()
     {
-        Instantiate(obj, transform.position, transform.rotation);
+        for (int i = 0; i < RoundSystem.g_iGruntsThisRound; i++)
+        {
+            yield return new WaitForSeconds(0.5f);
+            Instantiate(Grunt, transform.position, transform.rotation);
+        }
+        StartCoroutine(SpawnKamikazi());
+        
+    }
+    IEnumerator SpawnTank()
+    {
+        for (int i = 0; i < RoundSystem.g_iTanksThisRound; i++)
+        {
+            yield return new WaitForSeconds(0.9f);
+            Instantiate(Tank, transform.position, transform.rotation);
+        }
+        yield return new WaitForSeconds(0.9f);
+        StartCoroutine(SpawnGrunt());
+    }
+    IEnumerator SpawnKamikazi()
+    {
+        for (int i = 0; i < RoundSystem.g_iKamikaziThisRound; i++)
+        {
+            yield return new WaitForSeconds(0.2f);
+            Instantiate(Kamikazi, transform.position, transform.rotation);
+        }
     }
 }
