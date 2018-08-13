@@ -16,11 +16,7 @@ public class ManualSpawner : MonoBehaviour {
 	void Update () {
         if(isManual)
         {
-            if (Input.GetKeyDown(KeyCode.L))
-            {
-                print(RoundSystem.g_iGruntsThisRound);
-                Instantiate(Grunt, transform.position, transform.rotation);
-            }
+            
         }
         else
         {
