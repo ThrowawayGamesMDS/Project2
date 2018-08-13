@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4956416713258460}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: PlayerCentre
   m_TagString: PlayerCentre
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +57,8 @@ GameObject:
   - component: {fileID: 136060839734490206}
   - component: {fileID: 114505706634882120}
   - component: {fileID: 114318334527138628}
-  m_Layer: 0
+  - component: {fileID: 114492459749361590}
+  m_Layer: 8
   m_Name: Player_Prefab
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -70,8 +71,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1870803275146124}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: 0, y: 2.41, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 2.41, z: -13.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4955020125479772}
@@ -249,20 +250,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_bPlayerPlacingTurret: 0
   m_goPossibleTurrets:
-  - {fileID: 1600842792024738, guid: 66f6a15b8c02c004ab6232b5b000daff, type: 2}
+  - {fileID: 1600842792024738, guid: 754c11d31e361e74686f31460b925abd, type: 2}
   - {fileID: 1492170446996484, guid: 9b2abb7cb53a515408b4ae75402ccd31, type: 2}
+  - {fileID: 1719476638091168, guid: 6cf22cfdf914d12449b23d3ce1a89aa0, type: 2}
   m_goTurretPlacementOk:
   - {fileID: 1815941077914170, guid: 6ed9499180289eb4b8dc3d91adc9ab02, type: 2}
   - {fileID: 1444774387120084, guid: b6974b44357cebc4fbe90e38799c5e61, type: 2}
+  - {fileID: 1098105365932554, guid: 2b5854e26f5afed449e2ea7f0786719c, type: 2}
   m_goTurretPlacementBad:
   - {fileID: 1191505457910884, guid: 8aba97fb66ccfd0458624a114ccaa325, type: 2}
   - {fileID: 1000901086105270, guid: 60dbdb9ea48f0f34fb2c8429ea1ac77d, type: 2}
+  - {fileID: 1759940439103726, guid: e1f3189d2e47352429393fd8beffb48e, type: 2}
   m_goPlacementDefault: {fileID: 0}
   m_goCurrentlyPlacing: {fileID: 0}
   m_goPlacedTurrets: []
   m_iTurretsPlaced: 0
   m_iMaxTurretsPlaceable: 0
   m_iCurrentlyPlacing: 0
+--- !u!114 &114492459749361590
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1870803275146124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0397a3e974f38574da791f1fc7d68f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114505706634882120
 MonoBehaviour:
   m_ObjectHideFlags: 1
