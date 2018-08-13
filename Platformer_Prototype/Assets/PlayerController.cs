@@ -84,12 +84,7 @@ public class PlayerController : MonoBehaviour
             if (PlayerCanPlace(_rhCheck))
             {
                 m_vec3Pos = Camera.main.transform.position + Camera.main.transform.forward * 5.0f;
-                if (m_vec3Pos.y < 0 || m_vec3Pos.y > 0)
-                {
-                    m_vec3Pos.y = 0.5f;
-                }
-                print("Position of turret: " + m_vec3Pos);
-
+                m_vec3Pos.y = _rhCheck.point.y;
                 for (int i = 0; i < m_iTurretsPlaced; i++)
                 {
                      if (Vector3.Distance(_rhCheck.point, m_goPlacedTurrets[i].transform.position) <= 1.7f)
@@ -98,8 +93,9 @@ public class PlayerController : MonoBehaviour
                         return;
                     }
                 }
+                //m_goPlacedTurrets[m_iTurretsPlaced] = Instantiate(m_goPossibleTurrets[m_iCurrentlyPlacing], _rhCheck.point, Quaternion.identity) as GameObject;
                 m_goPlacedTurrets[m_iTurretsPlaced] = Instantiate(m_goPossibleTurrets[m_iCurrentlyPlacing], m_vec3Pos, Quaternion.identity) as GameObject;
-               m_iTurretsPlaced += 1;
+                m_iTurretsPlaced += 1;
             }
         }
 
@@ -182,29 +178,53 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-
-        if (Input.GetKeyUp(KeyCode.Alpha1))
+        if (m_bPlayerPlacingTurret)
         {
-            m_iCurrentlyPlacing = 0;
+            var d = Input.GetAxis("Mouse ScrollWheel");
+            if (d != 0)
+            {
+                if (d > 0f)
+                {
+                    if (m_iCurrentlyPlacing > 0)
+                    {
+                        m_iCurrentlyPlacing -= 1;
+                        print(m_iCurrentlyPlacing);
+                    }
+                    // scroll up
+                }
+                else if (d < 0f)
+                {
+                    if (m_iCurrentlyPlacing <= 2)
+                    {
+                        if (m_iCurrentlyPlacing != 2)
+                            m_iCurrentlyPlacing += 1;
 
-            if (m_bPlayerPlacingTurret)
+                        print(m_iCurrentlyPlacing);
+
+                    }
+                }
                 CheckTurretBaseForGround();
-        }
+            }
 
-        if (Input.GetKeyUp(KeyCode.Alpha2))
-        {
-            m_iCurrentlyPlacing = 1;
-
-            if (m_bPlayerPlacingTurret)
+            if (Input.GetKeyUp(KeyCode.Alpha1))
+            {
+                m_iCurrentlyPlacing = 0;
                 CheckTurretBaseForGround();
-        }
+            }
 
-        if (Input.GetKeyUp(KeyCode.Alpha3))
-        {
-            m_iCurrentlyPlacing = 2;
-
-            if (m_bPlayerPlacingTurret)
+            if (Input.GetKeyUp(KeyCode.Alpha2))
+            {
+                m_iCurrentlyPlacing = 1;
+                
                 CheckTurretBaseForGround();
+            }
+
+            if (Input.GetKeyUp(KeyCode.Alpha3))
+            {
+                m_iCurrentlyPlacing = 2;
+                
+                CheckTurretBaseForGround();
+            }
         }
 
         if (m_ePlayerState == PlayerStates.PLACING)
