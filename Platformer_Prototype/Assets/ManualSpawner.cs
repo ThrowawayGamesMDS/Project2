@@ -6,18 +6,14 @@ public class ManualSpawner : MonoBehaviour {
     public GameObject Grunt;
     public GameObject Tank;
     public GameObject Kamikazi;
-    public GameObject goal;
-    GameObject saved;
     public float timer;
     public bool isManual;
-    private bool hasInvoked;
+    public bool hasInvoked;
+    public List<GameObject> SpawnedEnemies;
+    public int enemiesAlive;
 	
 	// Update is called once per frame
 	void Update () {
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            hasInvoked = false;
-        }
         if(isManual)
         {
             if (Input.GetKeyDown(KeyCode.L))
@@ -45,8 +41,7 @@ public class ManualSpawner : MonoBehaviour {
         for (int i = 0; i < RoundSystem.g_iGruntsThisRound; i++)
         {
             yield return new WaitForSeconds(0.5f);
-            saved= Instantiate(Grunt, transform.position, transform.rotation);
-            saved.GetComponent<enemyWalk>().des = goal;
+            Instantiate(Grunt, transform.position, transform.rotation);
         }
         StartCoroutine(SpawnKamikazi());
         
@@ -58,7 +53,7 @@ public class ManualSpawner : MonoBehaviour {
             yield return new WaitForSeconds(0.9f);
             Instantiate(Tank, transform.position, transform.rotation);
         }
-        yield return new WaitForSeconds(0.9f);
+        yield return new WaitForSeconds(0.2f);
         StartCoroutine(SpawnGrunt());
     }
     IEnumerator SpawnKamikazi()

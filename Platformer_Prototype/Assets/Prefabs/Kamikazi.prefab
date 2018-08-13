@@ -130,6 +130,8 @@ MonoBehaviour:
   Targets: []
   priority: 
   currentTarget: {fileID: 0}
+  MoneyPrefab: {fileID: 1300222041930730, guid: d2c31d2730392d140acede510ceb019e,
+    type: 2}
   attackrange: 0
   attackdamage: 0
 --- !u!114 &114632107529977862
