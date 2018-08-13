@@ -6,6 +6,8 @@ public class ManualSpawner : MonoBehaviour {
     public GameObject Grunt;
     public GameObject Tank;
     public GameObject Kamikazi;
+    public GameObject goal;
+    GameObject saved;
     public float timer;
     public bool isManual;
     private bool hasInvoked;
@@ -43,7 +45,8 @@ public class ManualSpawner : MonoBehaviour {
         for (int i = 0; i < RoundSystem.g_iGruntsThisRound; i++)
         {
             yield return new WaitForSeconds(0.5f);
-            Instantiate(Grunt, transform.position, transform.rotation);
+            saved= Instantiate(Grunt, transform.position, transform.rotation);
+            saved.GetComponent<enemyWalk>().des = goal;
         }
         StartCoroutine(SpawnKamikazi());
         

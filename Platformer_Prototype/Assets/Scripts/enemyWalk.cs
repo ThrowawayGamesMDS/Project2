@@ -69,9 +69,12 @@ public class enemyWalk : MonoBehaviour {
                 {
                     if (hit.distance <= gameObject.GetComponent<EnemyStats>().attackrange)
                     {
+                        print("working");
 					if ((hit.transform.tag == "Turret")||(hit.transform.tag == "Barriers"))
                         {
                             agent.speed = 0;
+                            //agent.SetDestination(gameObject.GetComponent<EnemyStats>().currentTarget.transform.position);
+
                             // beguin attacking
                         }
 

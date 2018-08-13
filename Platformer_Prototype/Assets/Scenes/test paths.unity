@@ -335,7 +335,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 6
+  m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &318220199
 Prefab:
@@ -409,7 +409,7 @@ Prefab:
     - target: {fileID: 114589383342019036, guid: ab6991e6bbdefb6419a439d94069de1e,
         type: 2}
       propertyPath: attackrange
-      value: 0.4
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 54854388787842276, guid: ab6991e6bbdefb6419a439d94069de1e, type: 2}
@@ -898,7 +898,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4152275756240126, guid: 66f6a15b8c02c004ab6232b5b000daff, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 4.12
+      value: 2.18
       objectReference: {fileID: 0}
     - target: {fileID: 4152275756240126, guid: 66f6a15b8c02c004ab6232b5b000daff, type: 2}
       propertyPath: m_LocalRotation.x
@@ -952,6 +952,10 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555881010184330, guid: 66f6a15b8c02c004ab6232b5b000daff, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66f6a15b8c02c004ab6232b5b000daff, type: 2}
@@ -1035,7 +1039,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 970419610}
   m_LocalRotation: {x: -0, y: -0.44308174, z: -0, w: 0.8964812}
-  m_LocalPosition: {x: 4.51, y: 0.41, z: 5.43}
+  m_LocalPosition: {x: 3.79, y: 0.41, z: 0.33}
   m_LocalScale: {x: 2.5, y: 1, z: 5}
   m_Children:
   - {fileID: 1712586442}
