@@ -9,17 +9,20 @@ public class EnemyStats : MonoBehaviour {
     public List<GameObject> Targets;
     public List<int> priority;
     public GameObject currentTarget;
-
+    public GameObject MoneyPrefab;
     public float attackrange;
     public int attackdamage;
     void Start()
     {
         myAIMode = eAIMode.push;
+        m_fEnemyHealth = PublicStats.gruntHealth;
     }
     void Update()
     {
         if (m_fEnemyHealth <= 0)
         {
+            RoundSystem.g_iAliveUnits -= 1;
+            Instantiate(MoneyPrefab, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }
@@ -30,3 +33,7 @@ public class EnemyStats : MonoBehaviour {
     }
  
 }
+
+
+
+

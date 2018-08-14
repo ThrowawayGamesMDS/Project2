@@ -103,7 +103,14 @@ public class PlayerController : MonoBehaviour
 
     private void GeneratePlayerGunShot()
     {
-        GenerateRayCast(Random.Range(90.0f, 200.0f));
+        RaycastHit _rhCheck;
+        _rhCheck = GenerateRayCast(Random.Range(90.0f, 200.0f));
+        if (_rhCheck.transform.tag == "Enemy")
+        {
+            _rhCheck.transform.SendMessage("EnemyShot", Random.Range(5.5f, 15.5f));
+        }
+
+
     }
 
     private void UpdateTurretPlacementDefault(Vector3 _vec3DesiredPos)

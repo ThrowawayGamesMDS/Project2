@@ -1,0 +1,24 @@
+newmtl FF_BarrelSG
+illum 4
+Kd 1.00 0.23 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl FF_BaseSG
+illum 4
+Kd 0.20 0.20 0.20
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl FF_BaseSG1
+illum 4
+Kd 0.38 0.01 0.01
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl FF_BaseSG2
+illum 4
+Kd 0.05 0.02 0.01
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00

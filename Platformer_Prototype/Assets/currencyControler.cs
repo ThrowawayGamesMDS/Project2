@@ -5,11 +5,13 @@ using UnityEngine;
 public class currencyControler : MonoBehaviour {
     private bool isAttracted;
     GameObject player;
+    private int value;
     
 	// Use this for initialization
 	void Start () {
         isAttracted = false;
         player = GameObject.Find("PlayerCentre");
+        value = (100 * RoundSystem.g_fRound);
 	}
 	
 	// Update is called once per frame
@@ -27,7 +29,7 @@ public class currencyControler : MonoBehaviour {
                 
                 if(hit.distance <= 1)
                 {
-                    hit.transform.SendMessage("Pickup", 100);
+                    hit.transform.SendMessage("Pickup", value);
                     Destroy(gameObject);
                 }
             }
