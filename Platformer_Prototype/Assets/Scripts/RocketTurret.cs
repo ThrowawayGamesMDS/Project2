@@ -9,13 +9,13 @@ public class RocketTurret : MonoBehaviour {
     public eTurretLevel myTurretLvl;
     public float damping;
     public Transform endofturret;
+    public Animator anim;
     public float fireRate;
     public float turretAccuracy;
     private float turretCooldown;
     public AudioSource gunShotSound;
     public GameObject missile;
     public float f_TurretHealth;
-    public GameObject flames;
     public GameObject upgradeParticle;
     public List<GameObject> Targets;
 
@@ -66,10 +66,18 @@ public class RocketTurret : MonoBehaviour {
                 {
                     if (Targets[0] != null)
                     {
-                        Vector3 lookpos = Targets[0].transform.position - transform.position;
+                        /*Vector3 lookpos = Targets[0].transform.position - transform.position;
                         //lookpos.y = 0;
                         Quaternion rotation = Quaternion.LookRotation(lookpos);
                         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
+                        */
+                        transform.LookAt(Targets[0].transform.position);
+                        Vector3 eulerangles = transform.eulerAngles;
+                        eulerangles.x = 0;
+                        eulerangles.z = 0;
+                        eulerangles.y += 90;
+
+                        transform.rotation = Quaternion.Euler(eulerangles);
 
                         if (Time.time > turretCooldown)
                         {
@@ -104,6 +112,7 @@ public class RocketTurret : MonoBehaviour {
                                         Debug.DrawRay(endofturret.position, rayDirection, Color.white);
                                         CheckHit(hit, rayDirection);
                                     }
+                                    //anim.Play("Fire-Reload");
                                     gunShotSound.Play();
                                     turretCooldown = Time.time + fireRate;
                                 }
@@ -124,7 +133,6 @@ public class RocketTurret : MonoBehaviour {
     {
         //give player xp
         //spawn any particle effects
-        Instantiate(flames, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 

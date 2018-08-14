@@ -182,7 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4131047327603096}
   m_Layer: 0
-  m_Name: RocketTurret
+  m_Name: RocketTurretOLD
   m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -836,12 +836,12 @@ MonoBehaviour:
   myTurretLvl: 0
   damping: 10
   endofturret: {fileID: 4574203418788370}
+  anim: {fileID: 0}
   fireRate: 2
   turretAccuracy: 0
   gunShotSound: {fileID: 82200331884302904}
   missile: {fileID: 1353528840363638, guid: ec1a4113672e3334fbba692df875bf93, type: 2}
   f_TurretHealth: 100
-  flames: {fileID: 1298588413719758, guid: ff1a30a12357ff644b9c5ea0a8f9a0e7, type: 2}
   upgradeParticle: {fileID: 1336805535673476, guid: cef940a0c49d5f3498866088dfc7b935,
     type: 2}
   Targets: []
