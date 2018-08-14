@@ -29,11 +29,11 @@ public class spawnNewObjects : MonoBehaviour {
 
             if (enemiesToCome.Count > 0)
             {
-                //GameObject dummy = Instantiate(enemys[0]);
-                //dummy.GetComponent<enemyWalk>().des = des;
+                GameObject dummy = Instantiate(enemys[0]);
+                dummy.GetComponent<enemyWalk>().des = des;
 
-                //enemiesToCome.RemoveAt(0);
-                //timer = 180;
+                enemiesToCome.RemoveAt(0);
+                timer = 180;
             }
            
            
