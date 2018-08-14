@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
 
     private void CheckIfPlayerCanPlaceTurret()
     {
-        if (m_iTurretsPlaced <= m_iMaxTurretsPlaceable)
+        if (m_iTurretsPlaced <= m_iMaxTurretsPlaceable && PublicStats.g_fResourceCount > 49)
         {
             RaycastHit _rhCheck;
             Vector3 m_vec3Pos = new Vector3(0, 0, 0);
@@ -87,15 +87,33 @@ public class PlayerController : MonoBehaviour
                 m_vec3Pos.y = _rhCheck.point.y;
                 for (int i = 0; i < m_iTurretsPlaced; i++)
                 {
-                     if (Vector3.Distance(_rhCheck.point, m_goPlacedTurrets[i].transform.position) <= 1.7f)
+                     if (Vector3.Distance(m_vec3Pos, m_goPlacedTurrets[i].transform.position) <= 1.7f)
                     {
                         // a turret already exists in the desired position
                         return;
                     }
                 }
-                //m_goPlacedTurrets[m_iTurretsPlaced] = Instantiate(m_goPossibleTurrets[m_iCurrentlyPlacing], _rhCheck.point, Quaternion.identity) as GameObject;
                 m_goPlacedTurrets[m_iTurretsPlaced] = Instantiate(m_goPossibleTurrets[m_iCurrentlyPlacing], m_vec3Pos, Quaternion.identity) as GameObject;
                 m_iTurretsPlaced += 1;
+
+                switch(m_iCurrentlyPlacing)
+                {
+                    case 0:
+                        {
+                            PublicStats.g_fResourceCount -= 50;
+                            break;
+                        }
+                    case 1:
+                        {
+                            PublicStats.g_fResourceCount -= 75;
+                            break;
+                        }
+                    case 2:
+                        {
+                            PublicStats.g_fResourceCount -= 100;
+                            break;
+                        }
+                }
             }
         }
 
@@ -119,7 +137,7 @@ public class PlayerController : MonoBehaviour
         for (int i = 0; i < m_iTurretsPlaced; i++)
         {
             //if ((m_vec3Pos.x < m_goPlacedTurrets[i].transform.position.x + 3.0f && m_vec3Pos.x > m_goPlacedTurrets[i].transform.position.x - 3.0f) && (m_vec3Pos.z < m_goPlacedTurrets[i].transform.position.z + 3.0f && m_vec3Pos.z > m_goPlacedTurrets[i].transform.position.z - 3.0f))
-            if (Vector3.Distance(_vec3DesiredPos, m_goPlacedTurrets[i].transform.position) <= 1.7f)
+            if (Vector3.Distance(_vec3DesiredPos, m_goPlacedTurrets[i].transform.position) <= 1.7f || PublicStats.g_fResourceCount < 50)
             {
                 Destroy(m_goPlacementDefault);
                 m_goPlacementDefault = Instantiate(m_goTurretPlacementBad[m_iCurrentlyPlacing], _vec3DesiredPos, Quaternion.identity) as GameObject; 
