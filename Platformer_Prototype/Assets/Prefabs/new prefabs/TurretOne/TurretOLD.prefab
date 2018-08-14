@@ -159,7 +159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4152275756240126}
   m_Layer: 0
-  m_Name: Turret
+  m_Name: TurretOLD
   m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -797,7 +797,6 @@ MonoBehaviour:
   turretAccuracy: 0
   turretDamage: 5
   gunShotSound: {fileID: 82369448550493326}
-  ball: {fileID: 1224317887970998, guid: 50ebd0b135deae846823ca9dded335f1, type: 2}
   playerForce: 30
   f_TurretHealth: 100
   flames: {fileID: 1298588413719758, guid: ff1a30a12357ff644b9c5ea0a8f9a0e7, type: 2}
@@ -805,6 +804,7 @@ MonoBehaviour:
     type: 2}
   m_fOverallDamage: 0
   Targets: []
+  lookpos: {x: 0, y: 0, z: 0}
 --- !u!114 &114697445888185052
 MonoBehaviour:
   m_ObjectHideFlags: 1

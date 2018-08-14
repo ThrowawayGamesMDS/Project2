@@ -16,13 +16,13 @@ public class TurretAggro : MonoBehaviour
     public float turretDamage;
     private float turretCooldown;
     public AudioSource gunShotSound;
-    public GameObject ball;
     public float playerForce;
     public float f_TurretHealth;
     public GameObject flames;
     public GameObject upgradeParticle;
     public float m_fOverallDamage;
     public List <GameObject> Targets;
+    public Vector3 lookpos;
     // Use this for initialization
     void Start()
     {
@@ -35,6 +35,7 @@ public class TurretAggro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if(Targets.Count > 0)
         {
             if(Targets[0] == null)
@@ -68,11 +69,11 @@ public class TurretAggro : MonoBehaviour
                 {
                     if (Targets[0] != null)
                     {
-                        Vector3 lookpos = Targets[0].transform.position - transform.position;
-                        //lookpos.y = 0;
+                        lookpos = Targets[0].transform.position - transform.position;
+                        //lookpos.z = 0;
                         Quaternion rotation = Quaternion.LookRotation(lookpos);
                         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
-
+                        
                         if (Time.time > turretCooldown)
                         {
                             Vector3 rayOrigin = endofturret.position;
@@ -130,8 +131,7 @@ public class TurretAggro : MonoBehaviour
 
     void CheckHit(RaycastHit hit, Vector3 rayDirection)
     {
-        GameObject pInstance = Instantiate(ball, hit.point, Quaternion.identity);
-        pInstance.transform.up = hit.normal;
+        
         if (hit.transform.tag == "Enemy")
         {
             hit.transform.SendMessage("EnemyShot", turretDamage);

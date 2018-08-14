@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4974690631621528}
   m_Layer: 0
-  m_Name: TurretOne_BadPlacement
+  m_Name: TurretOne_BadPlacementOld
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

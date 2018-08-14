@@ -14,6 +14,7 @@ public class BallistaTurret : MonoBehaviour {
     public float turretAccuracy;
     private float turretCooldown;
     public AudioSource gunShotSound;
+    public Animator anim;
     public GameObject arrow;
     public float f_TurretHealth;
     public GameObject flames;
@@ -89,7 +90,7 @@ public class BallistaTurret : MonoBehaviour {
                                         Debug.DrawRay(endofturret.position, rayDirection, Color.yellow);
                                         //Debug.Log(hit.transform.name);
                                         CheckHit(hit, rayDirection);
-
+                                        
                                         ////////////////////////////////////////////
                                         //draw raycast if player is in view, instantiate rocket that travels in direction of rayDirection,
                                         //when collides creates physics explosion force and makes raycast towards player with range of around 5
@@ -147,6 +148,7 @@ public class BallistaTurret : MonoBehaviour {
 
     void CheckHit(RaycastHit hit, Vector3 rayDirection)
     {
+        anim.Play("Fire-Reload");
         GameObject MissileObj = Instantiate(arrow, endofturret.position, Quaternion.Euler(new Vector3(rayDirection.x, rayDirection.y, rayDirection.z)));
         MissileObj.transform.forward = rayDirection;
     }
