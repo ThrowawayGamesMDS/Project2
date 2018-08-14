@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4172738656015620}
   m_Layer: 0
-  m_Name: TurretTwo_BuildNotOk
+  m_Name: TurretTwo_BuildNotOkOLD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
