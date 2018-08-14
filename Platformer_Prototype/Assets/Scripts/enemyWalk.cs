@@ -84,10 +84,28 @@ public class enemyWalk : MonoBehaviour
                             if (recharge == 0)
                             {
                                 recharge = 90;
-                                
-                                //agent.SetDestination(gameObject.GetComponent<EnemyStats>().currentTarget.transform.position);
-                                hit.transform.SendMessage("TurretShot", gameObject.GetComponent<EnemyStats>().attackdamage);
-                                // beguin attacking
+
+
+                                if (hit.transform.GetComponent<TurretAggro>().f_TurretHealth == 0)
+                                {
+                                    gameObject.GetComponent<EnemyStats>().Targets.Clear();
+                                    gameObject.GetComponent<EnemyStats>().priority.Clear();
+                                    //print("c");
+                                    gameObject.GetComponent<EnemyStats>().currentTarget = null;
+                                    gameObject.GetComponent<EnemyStats>().myAIMode = EnemyStats.eAIMode.push;
+
+                                    gameObject.GetComponent<enemyWalk>().setupattacker();
+                                    gameObject.GetComponent<enemyWalk>().agent.speed = 2;
+
+                                    setupattacker();
+                                }
+                                else
+                                {
+                                    //agent.SetDestination(gameObject.GetComponent<EnemyStats>().currentTarget.transform.position);
+                                    hit.transform.SendMessage("TurretShot", gameObject.GetComponent<EnemyStats>().attackdamage);
+                                    // beguin attacking
+                                }
+                                  
                             }
                             else
                             {

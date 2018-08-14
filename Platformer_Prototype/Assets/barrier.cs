@@ -5,7 +5,7 @@ using UnityEngine;
 public class barrier : MonoBehaviour {
     public float deffendsHP;
     Collider m_ObjectCollider;
-    float delay = 300;
+    float delay = 200;
     // Use this for initialization
     void Start () {
         m_ObjectCollider.GetComponent<Collider>();

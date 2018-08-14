@@ -9,6 +9,12 @@ public class PublicStats : MonoBehaviour {
     public static int kamikaziHealth;
     public static float EnemySpeed;
     public static float kamikaziSpeed;
+    public static int gruntDPS;
+    public static int tankDPS;
+    public static int kamikazDPS;
+    public static float gruntAS;
+    public static float tankAS;
+    
 
     public float startingMoney;
 	// Use this for initialization
@@ -19,6 +25,12 @@ public class PublicStats : MonoBehaviour {
         kamikaziHealth = 40;
         EnemySpeed = 3;
         kamikaziSpeed = 6;
+        gruntDPS = 10;
+        tankDPS = 33;
+        kamikazDPS = 75;
+        gruntAS = 1.2f;
+        tankAS = 2.5f;
+       
     }
 	
 	// Update is called once per frame

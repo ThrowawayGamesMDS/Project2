@@ -23,6 +23,8 @@ public class TurretAggro : MonoBehaviour
     public float m_fOverallDamage;
     public List <GameObject> Targets;
     public Vector3 lookpos;
+    int delay = 150;
+    bool alive = true;
     // Use this for initialization
     void Start()
     {
@@ -67,37 +69,40 @@ public class TurretAggro : MonoBehaviour
                 }
             case eAIMode.Aggro:
                 {
-                    if (Targets[0] != null)
-                    {
-                        lookpos = Targets[0].transform.position - transform.position;
-                        //lookpos.z = 0;
-                        Quaternion rotation = Quaternion.LookRotation(lookpos);
-                        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
-                        
-                        if (Time.time > turretCooldown)
+                    if (alive == true)
+                    { 
+                        if (Targets[0] != null)
                         {
-                            Vector3 rayOrigin = endofturret.position;
-                            Vector3 rayDirection = Targets[0].transform.position - endofturret.position;
-                            RaycastHit hit;
-                            if (Physics.Raycast(endofturret.position, rayDirection, out hit, 100))
+                            lookpos = Targets[0].transform.position - transform.position;
+                            //lookpos.z = 0;
+                            Quaternion rotation = Quaternion.LookRotation(lookpos);
+                            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
+
+                            if (Time.time > turretCooldown)
                             {
-                                if (hit.transform.tag == "Enemy")
+                                Vector3 rayOrigin = endofturret.position;
+                                Vector3 rayDirection = Targets[0].transform.position - endofturret.position;
+                                RaycastHit hit;
+                                if (Physics.Raycast(endofturret.position, rayDirection, out hit, 100))
                                 {
-                                    rayDirection.x += Random.Range(-turretAccuracy, turretAccuracy);
-                                    rayDirection.z += Random.Range(-turretAccuracy, turretAccuracy);
-                                    rayDirection.y += Random.Range(-turretAccuracy, turretAccuracy);
-                                    if (Physics.Raycast(endofturret.position, rayDirection, out hit, 100))
+                                    if (hit.transform.tag == "Enemy")
                                     {
-                                        Debug.DrawRay(endofturret.position, rayDirection, Color.yellow);
-                                        //Debug.Log(hit.transform.name);
-                                        CheckHit(hit, rayDirection);
+                                        rayDirection.x += Random.Range(-turretAccuracy, turretAccuracy);
+                                        rayDirection.z += Random.Range(-turretAccuracy, turretAccuracy);
+                                        rayDirection.y += Random.Range(-turretAccuracy, turretAccuracy);
+                                        if (Physics.Raycast(endofturret.position, rayDirection, out hit, 100))
+                                        {
+                                            Debug.DrawRay(endofturret.position, rayDirection, Color.yellow);
+                                            //Debug.Log(hit.transform.name);
+                                            CheckHit(hit, rayDirection);
+                                        }
+                                        else
+                                        {
+                                            Debug.DrawRay(endofturret.position, rayDirection, Color.white);
+                                        }
+                                        gunShotSound.Play();
+                                        turretCooldown = Time.time + fireRate;
                                     }
-                                    else
-                                    {
-                                        Debug.DrawRay(endofturret.position, rayDirection, Color.white);
-                                    }
-                                    gunShotSound.Play();
-                                    turretCooldown = Time.time + fireRate;
                                 }
                             }
                         }
@@ -143,8 +148,20 @@ public class TurretAggro : MonoBehaviour
     {
         //give player xp
         //spawn any particle effects
-        Instantiate(flames, transform.position, Quaternion.identity, transform.parent);
-        Destroy(gameObject);
+
+        //Destroy(m_ObjectCollider);
+        gameObject.GetComponentInChildren<InRange>().destorycol();
+        alive = false;
+        if (delay == 0)
+        {
+            Instantiate(flames, transform.position, Quaternion.identity, transform.parent);
+            Destroy(gameObject);
+        }
+        else
+        {
+            delay--;
+        }
+       
     }
 
     void TurretShot(float damage)
@@ -155,29 +172,31 @@ public class TurretAggro : MonoBehaviour
 
     public void UpgradeTo(eTurretLevel lvl)
     {
-        if (lvl == eTurretLevel.Second)
+        if (alive == true)
         {
-            Instantiate(upgradeParticle, transform.position, upgradeParticle.transform.rotation);
-            turretDamage *= 1.5f;
-            fireRate *= 0.66f;
-            myTurretLvl = eTurretLevel.Second;
-        }
-        if (lvl == eTurretLevel.Third)
-        {
-            Instantiate(upgradeParticle, transform.position, upgradeParticle.transform.rotation);
-            turretDamage *= 1.5f;
-            fireRate *= 0.66f;
-            myTurretLvl = eTurretLevel.Third;
-        }
-        if (lvl == eTurretLevel.Fourth)
-        {
-            Instantiate(upgradeParticle, transform.position, upgradeParticle.transform.rotation);
-            turretDamage *= 1.5f;
-            fireRate *= 0.66f;
-            myTurretLvl = eTurretLevel.Fourth;
+
+
+            if (lvl == eTurretLevel.Second)
+            {
+                Instantiate(upgradeParticle, transform.position, upgradeParticle.transform.rotation);
+                turretDamage *= 1.5f;
+                fireRate *= 0.66f;
+                myTurretLvl = eTurretLevel.Second;
+            }
+            if (lvl == eTurretLevel.Third)
+            {
+                Instantiate(upgradeParticle, transform.position, upgradeParticle.transform.rotation);
+                turretDamage *= 1.5f;
+                fireRate *= 0.66f;
+                myTurretLvl = eTurretLevel.Third;
+            }
+            if (lvl == eTurretLevel.Fourth)
+            {
+                Instantiate(upgradeParticle, transform.position, upgradeParticle.transform.rotation);
+                turretDamage *= 1.5f;
+                fireRate *= 0.66f;
+                myTurretLvl = eTurretLevel.Fourth;
+            }
         }
     }
-
-
-
 }

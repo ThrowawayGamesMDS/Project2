@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InRange : MonoBehaviour {
-    public int threat; 
+    public int threat;
+    public MeshCollider col;
 	// Use this for initialization
 	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        col.GetComponent<Collider>();
+
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 
@@ -42,5 +44,9 @@ public class InRange : MonoBehaviour {
             //other.GetComponent<EnemyStats>().Targets.Remove(gameObject);
 
         }
+    }
+    public void destorycol()
+    {
+        Destroy(col);
     }
 }

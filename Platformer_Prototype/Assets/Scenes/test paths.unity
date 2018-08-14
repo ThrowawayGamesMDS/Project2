@@ -306,12 +306,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 199751741}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.446, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1093231934}
-  m_RootOrder: 3
+  m_Father: {fileID: 540734912}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &199751743
 MonoBehaviour:
@@ -325,6 +325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   threat: 1
+  col: {fileID: 0}
 --- !u!135 &199751744
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -629,6 +630,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &540734912 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4196228703913036, guid: 66f6a15b8c02c004ab6232b5b000daff,
+    type: 2}
+  m_PrefabInternal: {fileID: 768941985}
 --- !u!1 &597345804
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,7 +878,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4555881010184330, guid: 66f6a15b8c02c004ab6232b5b000daff, type: 2}
       propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4080170417526648, guid: 66f6a15b8c02c004ab6232b5b000daff, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4182661264627496, guid: 66f6a15b8c02c004ab6232b5b000daff, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279447559474710, guid: 66f6a15b8c02c004ab6232b5b000daff, type: 2}
+      propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4231299325860864, guid: 66f6a15b8c02c004ab6232b5b000daff, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66f6a15b8c02c004ab6232b5b000daff, type: 2}
@@ -1037,6 +1059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   threat: 2
+  col: {fileID: 0}
 --- !u!135 &1071877368
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1049,11 +1072,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
---- !u!4 &1093231934 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4152275756240126, guid: 66f6a15b8c02c004ab6232b5b000daff,
-    type: 2}
-  m_PrefabInternal: {fileID: 768941985}
 --- !u!1 &1712586441
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,6 +1114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   threat: 2
+  col: {fileID: 0}
 --- !u!135 &1712586444
 SphereCollider:
   m_ObjectHideFlags: 0
