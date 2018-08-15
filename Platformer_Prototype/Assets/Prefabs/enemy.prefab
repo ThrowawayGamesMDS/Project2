@@ -204,6 +204,7 @@ MonoBehaviour:
   Targets: []
   priority: 
   currentTarget: {fileID: 0}
+  MoneyPrefab: {fileID: 0}
   attackrange: 2
   attackdamage: 10
 --- !u!114 &114807789424506296
