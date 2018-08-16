@@ -78,14 +78,15 @@ public class enemyWalk : MonoBehaviour
                 raycastDir = gameObject.GetComponent<EnemyStats>().currentTarget.transform.position - transform.position;
 
                 workingray = new Ray(transform.position, raycastDir);
+			print("working");
                 if (Physics.Raycast(workingray, out hit))
                 {
                     
-                         print("working");
+                         print("workinga");
                         if (hit.transform.tag == "Turret")
                         {
                             
-                                if (gameObject.GetComponent<EnemyStats>().currentTarget.AddComponent<TurretAggro>().f_TurretHealth == 0)
+					if (gameObject.GetComponent<EnemyStats>().currentTarget.GetComponent<TurretAggro>().f_TurretHealth == 0)
                                 {
                                     gameObject.GetComponent<EnemyStats>().Targets.Clear();
                                     gameObject.GetComponent<EnemyStats>().priority.Clear();
@@ -136,7 +137,7 @@ public class enemyWalk : MonoBehaviour
                     
                         if (hit.transform.tag == "Barriers")
                         {
-                            if (gameObject.GetComponent<EnemyStats>().currentTarget.AddComponent<barrier>().deffendsHP == 0)
+					if (gameObject.GetComponent<EnemyStats>().currentTarget.GetComponent<barrier>().deffendsHP == 0)
                             {
                                 gameObject.GetComponent<EnemyStats>().Targets.Clear();
                                 gameObject.GetComponent<EnemyStats>().priority.Clear();

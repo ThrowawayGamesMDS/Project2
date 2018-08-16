@@ -652,10 +652,11 @@ GameObject:
   - component: {fileID: 4951674673143008}
   - component: {fileID: 95505514648495902}
   - component: {fileID: 54011430984438606}
-  - component: {fileID: 65676061592620310}
   - component: {fileID: 114215627908221948}
   - component: {fileID: 114559840523487830}
   - component: {fileID: 195366811563038014}
+  - component: {fileID: 64152084318097728}
+  - component: {fileID: 65064799776051008}
   m_Layer: 0
   m_Name: Goblin-All-Anims
   m_TagString: Enemy
@@ -1431,7 +1432,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1855265386468408}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.3321, y: -4.090008, z: 27.719814}
+  m_LocalPosition: {x: 48.05598, y: -4.090008, z: 23.961811}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children:
   - {fileID: 4978250904570386}
@@ -1496,7 +1497,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65676061592620310
+--- !u!64 &64152084318097728
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1855265386468408}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: ad5da99273adc8b4e9ad248e11c37666, type: 3}
+--- !u!65 &65064799776051008
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1506,8 +1521,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.05, y: 0.09805925, z: 0.05}
-  m_Center: {x: 0, y: 0.05402962, z: 0}
+  m_Size: {x: 0.05, y: 0.2, z: 0.05}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95505514648495902
 Animator:
   serializedVersion: 3
@@ -1561,7 +1576,7 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   MoneyPrefab: {fileID: 1300222041930730, guid: d2c31d2730392d140acede510ceb019e,
     type: 2}
-  attackrange: 2.3
+  attackrange: 2
   attackdamage: 5
   isTank: 0
 --- !u!137 &137748804372613062
