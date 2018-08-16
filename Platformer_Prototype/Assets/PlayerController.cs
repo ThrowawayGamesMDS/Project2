@@ -200,9 +200,9 @@ public class PlayerController : MonoBehaviour
             }
             else if (d < 0f)
             {
-                if (m_iCurrentlyPlacing <= 2)
+                if (m_iCurrentlyPlacing <= 3)
                 {
-                    if (m_iCurrentlyPlacing != 2)
+                    if (m_iCurrentlyPlacing != 3)
                         m_iCurrentlyPlacing += 1;
 
                     print(m_iCurrentlyPlacing);

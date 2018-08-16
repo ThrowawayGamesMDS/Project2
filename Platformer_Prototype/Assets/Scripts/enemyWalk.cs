@@ -16,7 +16,7 @@ public class enemyWalk : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        des = GameObject.FindGameObjectWithTag("Goal");
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
         //enemy.speed = 1;
@@ -58,7 +58,7 @@ public class enemyWalk : MonoBehaviour
                         {
                             if (hit.transform.tag == "Goal")
                             {
-                                hit.transform.GetComponent<endzone>().health--;
+                                endzone.health--;
                                 Destroy(gameObject);
                             }
                             //print("check point");

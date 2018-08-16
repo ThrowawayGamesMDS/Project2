@@ -224,6 +224,7 @@ MonoBehaviour:
   dis: 3
   agent: {fileID: 195278862201571432}
   argro: 0
+  enemy: {fileID: 0}
 --- !u!114 &114854374156331000
 MonoBehaviour:
   m_ObjectHideFlags: 1

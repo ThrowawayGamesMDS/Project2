@@ -10,7 +10,6 @@ public class RoundSystem : MonoBehaviour {
     public static int g_iRoundUnits;
     public static int g_iAliveUnits;
     public GameObject Spawner;
-    int timer=30*60;
     // Use this for initialization
     void Start () {
         DontDestroyOnLoad(gameObject);
@@ -24,22 +23,16 @@ public class RoundSystem : MonoBehaviour {
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.K)||(timer == 0))
+        if(Input.GetKeyDown(KeyCode.K))
         {
-            timer = 4000;
-            //print(g_iAliveUnits);
-            //if (g_iAliveUnits <= 0)
-            //{
+            
+            print(g_iAliveUnits);
+            if (g_iAliveUnits <= 0)
+            {
             AdvanceRound();
                 Spawner.GetComponent<ManualSpawner>().hasInvoked = false;
-            //}
+            }
         }
-        else
-        {
-            timer--;
-        }
-        
-
     }
 
     public void AdvanceRound()
