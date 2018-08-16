@@ -172,7 +172,7 @@ public class enemyWalk : MonoBehaviour
                                         // hit.transform.SendMessage("barrierShot", gameObject.GetComponent<EnemyStats>().attackdamage,gameObject);
                                     }
                                     recharge = 90;
-
+                                     
                                 }
                                 else
                                 {
