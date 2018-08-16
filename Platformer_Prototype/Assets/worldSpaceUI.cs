@@ -17,7 +17,7 @@ public class worldSpaceUI : MonoBehaviour {
         RaycastHit hit;
         int layermask = LayerMask.GetMask("upgrade");
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, 6, layermask))
+        if (Physics.Raycast(ray, out hit, 6, layermask) && GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().m_ePlayerState == PlayerController.PlayerStates.DEFAULT)
         {
             hit.transform.GetChild(0).gameObject.GetComponent<Canvas>().enabled = true;
         }

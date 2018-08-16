@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public bool m_bPlayerPlacingTurret;
     public GameObject[] m_goPossibleTurrets;
     public GameObject[] m_goTurretPlacementOk;
     public GameObject[] m_goTurretPlacementBad;
     public GameObject m_goPlacementDefault;
     public GameObject m_goCurrentlyPlacing;
+    public GameObject m_goBuilderUI3D;
     public GameObject[] m_goPlacedTurrets;
     public int m_iTurretsPlaced;
     public int m_iMaxTurretsPlaceable;
@@ -19,14 +19,13 @@ public class PlayerController : MonoBehaviour
     {
         PLACING, DEFAULT
     }
-    PlayerStates m_ePlayerState;
+    public PlayerStates m_ePlayerState;
 
     void Start()
     {
         m_iTurretsPlaced = 0;
         m_iCurrentlyPlacing = 0;
         m_goCurrentlyPlacing = m_goPossibleTurrets[0];
-        m_bPlayerPlacingTurret = false;
         m_ePlayerState = PlayerStates.DEFAULT;
         m_iMaxTurretsPlaceable = 50;
         m_goPlacedTurrets = new GameObject[m_iMaxTurretsPlaceable];
@@ -87,16 +86,17 @@ public class PlayerController : MonoBehaviour
                 m_vec3Pos.y = _rhCheck.point.y;
                 for (int i = 0; i < m_iTurretsPlaced; i++)
                 {
-                     if (Vector3.Distance(m_vec3Pos, m_goPlacedTurrets[i].transform.position) <= 1.7f)
+                    if (Vector3.Distance(m_vec3Pos, m_goPlacedTurrets[i].transform.position) <= 1.7f)
                     {
                         // a turret already exists in the desired position
                         return;
                     }
                 }
                 m_goPlacedTurrets[m_iTurretsPlaced] = Instantiate(m_goPossibleTurrets[m_iCurrentlyPlacing], m_vec3Pos, Quaternion.identity) as GameObject;
+                m_goPlacedTurrets[m_iTurretsPlaced].transform.rotation = m_goPlacementDefault.transform.rotation;
                 m_iTurretsPlaced += 1;
 
-                switch(m_iCurrentlyPlacing)
+                switch (m_iCurrentlyPlacing)
                 {
                     case 0:
                         {
@@ -139,7 +139,7 @@ public class PlayerController : MonoBehaviour
             if (Vector3.Distance(_vec3PlacementPos, m_goPlacedTurrets[i].transform.position) <= 1.7f)
             {
                 // a turret already exists in the desired position
-                _bTurretExists =  true;
+                _bTurretExists = true;
             }
         }
         return _bTurretExists;
@@ -147,56 +147,112 @@ public class PlayerController : MonoBehaviour
 
     private void CheckTurretBaseForGround()
     {
-        if (m_ePlayerState == PlayerStates.DEFAULT)
+        if (Camera.main.transform.rotation.x > 32.3f || Camera.main.transform.rotation.x < 91.0f)
         {
-            RaycastHit _rhCheck = GenerateRayCast(5.0f);
+            RaycastHit _rhCheck = GenerateRayCast(25.0f);
             Vector3 pos = Camera.main.transform.position + Camera.main.transform.forward * 5.0f;
             pos.y = _rhCheck.point.y;
-            if (!CheckForTurretsInPlacingRegion(pos))
+            if (m_ePlayerState == PlayerStates.DEFAULT)
             {
-                m_goPlacementDefault = Instantiate(m_goTurretPlacementOk[m_iCurrentlyPlacing], pos, Quaternion.identity) as GameObject;
+                //m_goBuilderUI3D = Instantiate(m_goBuilderUI3D, UIPos, Quaternion.identity) as GameObject;
+                if (!CheckForTurretsInPlacingRegion(pos))
+                {
+                    m_goPlacementDefault = Instantiate(m_goTurretPlacementOk[m_iCurrentlyPlacing], pos, Quaternion.identity) as GameObject;
+                }
+                else
+                {
+                    m_goPlacementDefault = Instantiate(m_goTurretPlacementBad[m_iCurrentlyPlacing], pos, Quaternion.identity) as GameObject;
+                }
             }
             else
             {
-                m_goPlacementDefault = Instantiate(m_goTurretPlacementBad[m_iCurrentlyPlacing], pos, Quaternion.identity) as GameObject;
+                Destroy(m_goPlacementDefault);
+                //m_goBuilderUI3D = Instantiate(m_goBuilderUI3D, UIPos, Quaternion.identity) as GameObject;
+                if (!CheckForTurretsInPlacingRegion(pos))
+                {
+                    m_goPlacementDefault = Instantiate(m_goTurretPlacementOk[m_iCurrentlyPlacing], pos, Quaternion.identity) as GameObject;
+                }
+                else
+                {
+                    m_goPlacementDefault = Instantiate(m_goTurretPlacementBad[m_iCurrentlyPlacing], pos, Quaternion.identity) as GameObject;
+                }
             }
+            //m_goBuilderUI3D.transform.position = pos;
         }
         else
         {
             Destroy(m_goPlacementDefault);
-            RaycastHit _rhCheck = GenerateRayCast(5.0f);
-            Vector3 pos = Camera.main.transform.position + Camera.main.transform.forward * 5.0f;
-            pos.y = _rhCheck.point.y;
-            if (!CheckForTurretsInPlacingRegion(pos))
-            {
-                m_goPlacementDefault = Instantiate(m_goTurretPlacementOk[m_iCurrentlyPlacing], pos, Quaternion.identity) as GameObject;
-            }
-            else
-            {
-                m_goPlacementDefault = Instantiate(m_goTurretPlacementBad[m_iCurrentlyPlacing], pos, Quaternion.identity) as GameObject;
-            }
         }
     }
-    
-	
-	// Update is called once per frame
-	void Update ()
+
+    private void HandleTurretSwitching()
+    {
+        var d = Input.GetAxis("Mouse ScrollWheel");
+        if (d != 0)
+        {
+            if (d > 0f)
+            {
+                if (m_iCurrentlyPlacing > 0)
+                {
+                    m_iCurrentlyPlacing -= 1;
+                    print(m_iCurrentlyPlacing);
+                }
+                // scroll up
+            }
+            else if (d < 0f)
+            {
+                if (m_iCurrentlyPlacing <= 3)
+                {
+                    if (m_iCurrentlyPlacing != 3)
+                        m_iCurrentlyPlacing += 1;
+
+                    print(m_iCurrentlyPlacing);
+
+                }
+            }
+            CheckTurretBaseForGround();
+        }
+
+        if (Input.GetKeyUp(KeyCode.Alpha1))
+        {
+            m_iCurrentlyPlacing = 0;
+            CheckTurretBaseForGround();
+        }
+
+        if (Input.GetKeyUp(KeyCode.Alpha2))
+        {
+            m_iCurrentlyPlacing = 1;
+
+            CheckTurretBaseForGround();
+        }
+
+        if (Input.GetKeyUp(KeyCode.Alpha3))
+        {
+            m_iCurrentlyPlacing = 2;
+
+            CheckTurretBaseForGround();
+        }
+    }
+
+    private void RotateDefaultPlacementDirection()
+    {
+        if (m_goPlacementDefault.transform.rotation != GameObject.FindGameObjectWithTag("Player").transform.rotation)
+        {
+            m_goPlacementDefault.transform.rotation = GameObject.FindGameObjectWithTag("Player").transform.rotation;
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         if (Input.GetKeyUp(KeyCode.F))
         {
-            if (m_bPlayerPlacingTurret)
-            {
-                m_bPlayerPlacingTurret = false;
-            }
-            else
-            {
-                m_bPlayerPlacingTurret = true;
-            }
 
             switch (m_ePlayerState)
             {
                 case PlayerStates.PLACING:
                     Destroy(m_goPlacementDefault);
+                    //Destroy(m_goBuilderUI3D);
                     m_ePlayerState = PlayerStates.DEFAULT;
                     break;
                 case PlayerStates.DEFAULT:
@@ -206,61 +262,20 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-        if (m_bPlayerPlacingTurret)
+
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            var d = Input.GetAxis("Mouse ScrollWheel");
-            if (d != 0)
-            {
-                if (d > 0f)
-                {
-                    if (m_iCurrentlyPlacing > 0)
-                    {
-                        m_iCurrentlyPlacing -= 1;
-                        print(m_iCurrentlyPlacing);
-                    }
-                    // scroll up
-                }
-                else if (d < 0f)
-                {
-                    if (m_iCurrentlyPlacing <= 2)
-                    {
-                        if (m_iCurrentlyPlacing != 2)
-                            m_iCurrentlyPlacing += 1;
-
-                        print(m_iCurrentlyPlacing);
-
-                    }
-                }
-                CheckTurretBaseForGround();
-            }
-
-            if (Input.GetKeyUp(KeyCode.Alpha1))
-            {
-                m_iCurrentlyPlacing = 0;
-                CheckTurretBaseForGround();
-            }
-
-            if (Input.GetKeyUp(KeyCode.Alpha2))
-            {
-                m_iCurrentlyPlacing = 1;
-                
-                CheckTurretBaseForGround();
-            }
-
-            if (Input.GetKeyUp(KeyCode.Alpha3))
-            {
-                m_iCurrentlyPlacing = 2;
-                
-                CheckTurretBaseForGround();
-            }
+            Debug.Break();
         }
 
         if (m_ePlayerState == PlayerStates.PLACING)
         {
             CheckTurretBaseForGround();
+            RotateDefaultPlacementDirection();
+            HandleTurretSwitching();
         }
 
-		if (Input.GetKeyUp(KeyCode.Mouse0))
+        if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             print("player trying to left click");
             switch (m_ePlayerState)
@@ -277,5 +292,5 @@ public class PlayerController : MonoBehaviour
                     }
             }
         }
-	}
+    }
 }

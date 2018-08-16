@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class endzone : MonoBehaviour {
-    public int health;
+    public static float health;
 	// Use this for initialization
 	void Start () {
-		
+        health = 100f;
 	}
 	
 	// Update is called once per frame
