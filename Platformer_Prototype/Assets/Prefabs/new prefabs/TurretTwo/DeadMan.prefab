@@ -416,6 +416,7 @@ GameObject:
   - component: {fileID: 135131361115524132}
   - component: {fileID: 136561389456094462}
   - component: {fileID: 114447698596195468}
+  - component: {fileID: 208830425923724350}
   m_Layer: 0
   m_Name: DeadMan
   m_TagString: Turret
@@ -5800,3 +5801,18 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!208 &208830425923724350
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1753042606354072}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

@@ -28,38 +28,11 @@ public class barrier : MonoBehaviour {
           
         }
     }
-    public void barrierShot(float damage, GameObject player)
+    public void barrierShot(float damage)
     {
-        if (deffendsHP <= 0)
-        {
-            print("b");
-
-            // for (int i = 0; i < player.GetComponent<EnemyStats>().priority.Count; i++)
-            // {
-            player.GetComponent<EnemyStats>().Targets.Clear();// (gameObject);
-            player.GetComponent<EnemyStats>().priority.Clear();// Remove(gameObject.GetComponentInChildren<InRange>().threat);
-
-            print("c");
-            player.GetComponent<enemyWalk>().setupattacker();
-            player.GetComponent<enemyWalk>().agent.speed = 2;
-            print("d");
-            //if (player.GetComponent<EnemyStats>().Targets[i] == gameObject)
-            //{
-            //    print("a");
-
-            //    player.GetComponent<EnemyStats>().Targets.RemoveAt(i);
-            //    player.GetComponent<EnemyStats>().priority.RemoveAt(i);
-            //    player.GetComponent<enemyWalk>().setupattacker();
-            //    player.GetComponent<enemyWalk>().agent.speed = 2;
-            //    break;
-            //}
-            //}
-
-        }
-        else
-        {
+       
             deffendsHP -= damage;
-        }
+        
        
         //print(f_TurretHealth);
     }
