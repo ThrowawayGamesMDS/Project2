@@ -93,6 +93,7 @@ public class PlayerController : MonoBehaviour
                     }
                 }
                 m_goPlacedTurrets[m_iTurretsPlaced] = Instantiate(m_goPossibleTurrets[m_iCurrentlyPlacing], m_vec3Pos, Quaternion.identity) as GameObject;
+                m_goPlacedTurrets[m_iTurretsPlaced].transform.rotation = m_goPlacementDefault.transform.rotation;
                 m_iTurretsPlaced += 1;
 
                 switch (m_iCurrentlyPlacing)
