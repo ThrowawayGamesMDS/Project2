@@ -9,28 +9,50 @@ public class RoundSystem : MonoBehaviour {
     public static int g_iKamikaziThisRound;
     public static int g_iRoundUnits;
     public static int g_iAliveUnits;
+    public static bool isInPlay;
     public GameObject Spawner;
     // Use this for initialization
     void Start () {
+
         DontDestroyOnLoad(gameObject);
-        g_fRound = 1;
-        g_iGruntsThisRound = 10;
+        g_fRound = 0;
+        g_iGruntsThisRound = 0;
         g_iTanksThisRound = 0;
         g_iKamikaziThisRound = 0;
-        g_iRoundUnits = 10;
-        g_iAliveUnits = 10;
+        g_iRoundUnits = 0;
+        g_iAliveUnits = 0;
 	}
 
     void Update()
     {
+        if (g_iAliveUnits == 0)
+        {
+            isInPlay = false;
+        }
+        else
+        {
+            isInPlay = true;
+        }
+
+
+
         if(Input.GetKeyDown(KeyCode.K))
         {
-            
-            print(g_iAliveUnits);
             if (g_iAliveUnits <= 0)
             {
-            AdvanceRound();
-                Spawner.GetComponent<ManualSpawner>().hasInvoked = false;
+                if(g_fRound <=0)
+                {
+                    g_iGruntsThisRound = 10;
+                    g_iRoundUnits = 10;
+                    g_iAliveUnits = 10;
+                    g_fRound++;
+                    Spawner.GetComponent<ManualSpawner>().hasInvoked = false;
+                }
+                else
+                {
+                    AdvanceRound();
+                    Spawner.GetComponent<ManualSpawner>().hasInvoked = false;
+                }
             }
         }
     }
