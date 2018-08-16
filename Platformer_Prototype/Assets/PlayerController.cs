@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     {
         PLACING, DEFAULT
     }
-    PlayerStates m_ePlayerState;
+    public PlayerStates m_ePlayerState;
 
     void Start()
     {
@@ -149,7 +149,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Camera.main.transform.rotation.x > 32.3f || Camera.main.transform.rotation.x < 91.0f)
         {
-            RaycastHit _rhCheck = GenerateRayCast(5.0f);
+            RaycastHit _rhCheck = GenerateRayCast(25.0f);
             Vector3 pos = Camera.main.transform.position + Camera.main.transform.forward * 5.0f;
             pos.y = _rhCheck.point.y;
             if (m_ePlayerState == PlayerStates.DEFAULT)
