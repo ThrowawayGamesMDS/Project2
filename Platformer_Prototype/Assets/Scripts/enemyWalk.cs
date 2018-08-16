@@ -12,12 +12,15 @@ public class enemyWalk : MonoBehaviour
     public NavMeshAgent agent;
     float recharge;
     public bool argro = false;
+    public Animator enemy;
     // Use this for initialization
     void Start()
     {
 
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
+        //enemy.speed = 1;
+        enemy.SetInteger("speed", 1);
         //gameObject.GetComponent<EnemyStats>();
     }
 
@@ -80,70 +83,102 @@ public class enemyWalk : MonoBehaviour
                         // print("working");
                         if (hit.transform.tag == "Turret")
                         {
-                            agent.speed = 0;
-                            if (recharge == 0)
+                            if (gameObject.tag == "BombEnemy")
                             {
-                                recharge = 90;
-
-
-                                if (hit.transform.GetComponent<TurretAggro>().f_TurretHealth == 0)
-                                {
-                                    gameObject.GetComponent<EnemyStats>().Targets.Clear();
-                                    gameObject.GetComponent<EnemyStats>().priority.Clear();
-                                    //print("c");
-                                    gameObject.GetComponent<EnemyStats>().currentTarget = null;
-                                    gameObject.GetComponent<EnemyStats>().myAIMode = EnemyStats.eAIMode.push;
-
-                                    gameObject.GetComponent<enemyWalk>().setupattacker();
-                                    gameObject.GetComponent<enemyWalk>().agent.speed = 2;
-
-                                    setupattacker();
-                                }
-                                else
-                                {
-                                    //agent.SetDestination(gameObject.GetComponent<EnemyStats>().currentTarget.transform.position);
-                                    hit.transform.SendMessage("TurretShot", gameObject.GetComponent<EnemyStats>().attackdamage);
-                                    // beguin attacking
-                                }
-                                  
+                                hit.transform.SendMessage("TurretShot", gameObject.GetComponent<EnemyStats>().attackdamage);
+                                Destroy(gameObject);
                             }
                             else
                             {
-                                recharge--;
+                                agent.speed = 0;
+                                if (recharge == 0)
+                                {
+                                   
+
+
+                                    if (hit.transform.GetComponent<TurretAggro>().f_TurretHealth == 0)
+                                    {
+                                        gameObject.GetComponent<EnemyStats>().Targets.Clear();
+                                        gameObject.GetComponent<EnemyStats>().priority.Clear();
+                                        //print("c");
+                                        gameObject.GetComponent<EnemyStats>().currentTarget = null;
+                                        gameObject.GetComponent<EnemyStats>().myAIMode = EnemyStats.eAIMode.push;
+
+                                        gameObject.GetComponent<enemyWalk>().setupattacker();
+                                        gameObject.GetComponent<enemyWalk>().agent.speed = 2;
+
+                                        enemy.SetInteger("speed", 1);
+                                        setupattacker();
+                                    }
+                                    else
+                                    {
+                                        print("aa");
+                                        enemy.GetComponent<setattack>().att = true;
+                                        //agent.SetDestination(gameObject.GetComponent<EnemyStats>().currentTarget.transform.position);
+                                        //enemy.SetBool("Attack", true);
+                                        print("ab");
+                                        hit.transform.SendMessage("TurretShot", gameObject.GetComponent<EnemyStats>().attackdamage);
+                                        print("ac");// beguin attacking
+                                    }
+                                    recharge = 90;
+                                }
+                                else
+                                //enemy.SetBool("attack", false);
+                                {
+                                    recharge--;
+
+                                }
                             }
 
                         }
                         if (hit.transform.tag == "Barriers")
                         {
-                            agent.speed = 0;
-                            if (recharge == 0)
+                            if (gameObject.tag == "BombEnemy")
                             {
-                                recharge = 90;
-                                
-                                if (hit.transform.GetComponent<barrier>().deffendsHP == 0)
-                                {
-                                    gameObject.GetComponent<EnemyStats>().Targets.Clear();
-                                    gameObject.GetComponent<EnemyStats>().priority.Clear();
-                                    //print("c");
-                                    gameObject.GetComponent<EnemyStats>().currentTarget = null;
-                                    gameObject.GetComponent<EnemyStats>().myAIMode = EnemyStats.eAIMode.push;
-
-                                    gameObject.GetComponent<enemyWalk>().setupattacker();
-                                    gameObject.GetComponent<enemyWalk>().agent.speed = 2;
-
-                                    setupattacker();
-                                }
-                                else
-                                {
-                                    hit.transform.GetComponent<barrier>().barrierShot(gameObject.GetComponent<EnemyStats>().attackdamage, gameObject);
-                                    // hit.transform.SendMessage("barrierShot", gameObject.GetComponent<EnemyStats>().attackdamage,gameObject);
-                                }
-
-
+                                hit.transform.SendMessage("TurretShot", gameObject.GetComponent<EnemyStats>().attackdamage);
+                                Destroy(gameObject);
                             }
                             else
                             {
-                                recharge--;
+                                agent.speed = 0;
+                                if (recharge == 0)
+                                {
+                                    //recharge = 90;
+
+                                    if (hit.transform.GetComponent<barrier>().deffendsHP == 0)
+                                    {
+                                        gameObject.GetComponent<EnemyStats>().Targets.Clear();
+                                        gameObject.GetComponent<EnemyStats>().priority.Clear();
+                                        //print("c");
+                                        gameObject.GetComponent<EnemyStats>().currentTarget = null;
+                                        gameObject.GetComponent<EnemyStats>().myAIMode = EnemyStats.eAIMode.push;
+
+                                        gameObject.GetComponent<enemyWalk>().setupattacker();
+                                        gameObject.GetComponent<enemyWalk>().agent.speed = 2;
+
+                                        enemy.SetInteger("speed", 1);
+                                        setupattacker();
+                                    }
+                                    else
+                                    {
+                                        print("aa");
+                                        enemy.GetComponent<setattack>().att = true;
+                                        //enemy.SetBool("Attack", true);
+                                        //enemy.SetInteger("speed", 1);
+                                        //enemy.SetBool("Attack",true);
+                                        print("ab");
+                                        hit.transform.GetComponent<barrier>().barrierShot(gameObject.GetComponent<EnemyStats>().attackdamage, gameObject);
+                                        print("ac");
+                                        // hit.transform.SendMessage("barrierShot", gameObject.GetComponent<EnemyStats>().attackdamage,gameObject);
+                                    }
+                                    recharge = 90;
+
+                                }
+                                else
+                                {
+                                    //enemy.SetBool("attack", false);
+                                    recharge--;
+                                }
                             }
                         }
                     }
@@ -231,7 +266,7 @@ public class enemyWalk : MonoBehaviour
                 break;
         }
 
-        
+
         if (fornow == 0)
         {
             print("end");
@@ -242,5 +277,11 @@ public class enemyWalk : MonoBehaviour
 
 
         }
+    }
+
+
+    void attacking()
+    {
+        enemy.SetBool("Attack", true);
     }
 }

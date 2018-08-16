@@ -1,0 +1,218 @@
+fileFormatVersion: 2
+guid: ad5da99273adc8b4e9ad248e11c37666
+timeCreated: 1534244050
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Base HumanHead
+    100002: Base HumanLCalf
+    100004: Base HumanLCollarbone
+    100006: Base HumanLDigit11
+    100008: Base HumanLDigit11 1
+    100010: Base HumanLDigit12
+    100012: Base HumanLDigit21
+    100014: Base HumanLDigit22
+    100016: Base HumanLDigit23
+    100018: Base HumanLDigit31
+    100020: Base HumanLDigit32
+    100022: Base HumanLDigit33
+    100024: Base HumanLDigit41
+    100026: Base HumanLDigit42
+    100028: Base HumanLDigit43
+    100030: Base HumanLFoot
+    100032: Base HumanLForearm
+    100034: Base HumanLPalm
+    100036: Base HumanLThigh
+    100038: Base HumanLUpperarm
+    100040: Base HumanNeck1
+    100042: Base HumanNeck2
+    100044: Base HumanPelvis
+    100046: Base HumanRArmCollarbone
+    100048: Base HumanRArmDigit11
+    100050: Base HumanRArmDigit12
+    100052: Base HumanRArmDigit21
+    100054: Base HumanRArmDigit22
+    100056: Base HumanRArmDigit23
+    100058: Base HumanRArmDigit31
+    100060: Base HumanRArmDigit32
+    100062: Base HumanRArmDigit33
+    100064: Base HumanRArmDigit41
+    100066: Base HumanRArmDigit42
+    100068: Base HumanRArmDigit43
+    100070: Base HumanRArmForearm
+    100072: Base HumanRArmPalm
+    100074: Base HumanRArmUpperarm
+    100076: Base HumanRibcage
+    100078: Base HumanRLegCalf
+    100080: Base HumanRLegDigit11
+    100082: Base HumanRLegFoot
+    100084: Base HumanRLegThigh
+    100086: Base HumanSpine1
+    100088: Base HumanSpine2
+    100090: Base HumanSpine3
+    100092: Base HumanSpine4
+    100094: FullGoblin_Uvd_Mesh
+    100096: //RootNode
+    400000: Base HumanHead
+    400002: Base HumanLCalf
+    400004: Base HumanLCollarbone
+    400006: Base HumanLDigit11
+    400008: Base HumanLDigit11 1
+    400010: Base HumanLDigit12
+    400012: Base HumanLDigit21
+    400014: Base HumanLDigit22
+    400016: Base HumanLDigit23
+    400018: Base HumanLDigit31
+    400020: Base HumanLDigit32
+    400022: Base HumanLDigit33
+    400024: Base HumanLDigit41
+    400026: Base HumanLDigit42
+    400028: Base HumanLDigit43
+    400030: Base HumanLFoot
+    400032: Base HumanLForearm
+    400034: Base HumanLPalm
+    400036: Base HumanLThigh
+    400038: Base HumanLUpperarm
+    400040: Base HumanNeck1
+    400042: Base HumanNeck2
+    400044: Base HumanPelvis
+    400046: Base HumanRArmCollarbone
+    400048: Base HumanRArmDigit11
+    400050: Base HumanRArmDigit12
+    400052: Base HumanRArmDigit21
+    400054: Base HumanRArmDigit22
+    400056: Base HumanRArmDigit23
+    400058: Base HumanRArmDigit31
+    400060: Base HumanRArmDigit32
+    400062: Base HumanRArmDigit33
+    400064: Base HumanRArmDigit41
+    400066: Base HumanRArmDigit42
+    400068: Base HumanRArmDigit43
+    400070: Base HumanRArmForearm
+    400072: Base HumanRArmPalm
+    400074: Base HumanRArmUpperarm
+    400076: Base HumanRibcage
+    400078: Base HumanRLegCalf
+    400080: Base HumanRLegDigit11
+    400082: Base HumanRLegFoot
+    400084: Base HumanRLegThigh
+    400086: Base HumanSpine1
+    400088: Base HumanSpine2
+    400090: Base HumanSpine3
+    400092: Base HumanSpine4
+    400094: FullGoblin_Uvd_Mesh
+    400096: //RootNode
+    2100000: initialShadingGroup
+    4300000: FullGoblin_Uvd_Mesh
+    7400000: Goblin-Idle
+    9500000: //RootNode
+    13700000: FullGoblin_Uvd_Mesh
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Goblin-Idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

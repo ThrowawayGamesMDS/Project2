@@ -18,6 +18,8 @@ TagManager:
   - Mplatform
   - Currency
   - Barriers
+  - TURR_BASE
+  - BombEnemy
   layers:
   - Default
   - TransparentFX
