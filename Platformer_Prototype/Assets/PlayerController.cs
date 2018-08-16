@@ -91,19 +91,6 @@ public class PlayerController : MonoBehaviour
                     m_goPlacedTurrets[m_iTurretsPlaced] = Instantiate(m_goPossibleTurrets[m_iCurrentlyPlacing], m_vec3Pos, Quaternion.identity) as GameObject;
                     m_goPlacedTurrets[m_iTurretsPlaced].transform.rotation = m_goPlacementDefault.transform.rotation;
                     m_iTurretsPlaced += 1;
-                    // }
-                    /*  for (int i = 0; i < m_iTurretsPlaced; i++)
-                      {
-                          if (Vector3.Distance(m_vec3Pos, m_goPlacedTurrets[i].transform.position) <= 1.7f)
-                          {
-                              // a turret already exists in the desired position
-                              return;
-                          }
-                      }
-                      m_goSuccessfulBuild = Instantiate(m_goParticleEffects[0], m_vec3Pos, m_goParticleEffects[0].transform.rotation) as GameObject;
-                      m_goPlacedTurrets[m_iTurretsPlaced] = Instantiate(m_goPossibleTurrets[m_iCurrentlyPlacing], m_vec3Pos, Quaternion.identity) as GameObject;
-                      m_goPlacedTurrets[m_iTurretsPlaced].transform.rotation = m_goPlacementDefault.transform.rotation;
-                      m_iTurretsPlaced += 1;*/
 
                     switch (m_iCurrentlyPlacing)
                     {
