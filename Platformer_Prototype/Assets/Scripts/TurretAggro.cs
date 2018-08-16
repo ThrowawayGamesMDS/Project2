@@ -179,22 +179,22 @@ public class TurretAggro : MonoBehaviour
             if (lvl == eTurretLevel.Second)
             {
                 Instantiate(upgradeParticle, transform.position, upgradeParticle.transform.rotation);
-                turretDamage *= 1.5f;
-                fireRate *= 0.66f;
+                turretDamage *= 1.2f;
+                fireRate *= 0.8f;
                 myTurretLvl = eTurretLevel.Second;
             }
             if (lvl == eTurretLevel.Third)
             {
                 Instantiate(upgradeParticle, transform.position, upgradeParticle.transform.rotation);
-                turretDamage *= 1.5f;
-                fireRate *= 0.66f;
+                turretDamage *= 1.2f;
+                fireRate *= 0.8f;
                 myTurretLvl = eTurretLevel.Third;
             }
             if (lvl == eTurretLevel.Fourth)
             {
                 Instantiate(upgradeParticle, transform.position, upgradeParticle.transform.rotation);
-                turretDamage *= 1.5f;
-                fireRate *= 0.66f;
+                turretDamage *= 1.2f;
+                fireRate *= 0.8f;
                 myTurretLvl = eTurretLevel.Fourth;
             }
         }

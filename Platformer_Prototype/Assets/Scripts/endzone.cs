@@ -13,7 +13,7 @@ public class endzone : MonoBehaviour {
 	void Update () {
         if (health == 0)
         {
-            ;
+            
         }
     }
     //void OnCollisionEnter(Collision col)

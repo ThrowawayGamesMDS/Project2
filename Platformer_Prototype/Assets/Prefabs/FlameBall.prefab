@@ -237,11 +237,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d98b03a6c469db439c1a10a57730423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missileSpeed: 15
+  missileSpeed: 10
   audiosrc: {fileID: 82508257310960688}
   radius: 4
-  power: 1000
-  damage: 50
   explosion: {fileID: 1388387591576220, guid: d9c753798bc987941b0b5d341018ac91, type: 2}
   isMoving: 0
 --- !u!135 &135082725828478150

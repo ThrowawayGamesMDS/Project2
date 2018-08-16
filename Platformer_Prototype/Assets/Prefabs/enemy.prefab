@@ -199,12 +199,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1361bba5170c1f478330721475c5fed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_fEnemyHealth: 3000
+  m_fEnemyHealth: 100
   myAIMode: 0
   Targets: []
   priority: 
   currentTarget: {fileID: 0}
-  MoneyPrefab: {fileID: 0}
+  MoneyPrefab: {fileID: 1300222041930730, guid: d2c31d2730392d140acede510ceb019e,
+    type: 2}
   attackrange: 2
   attackdamage: 10
 --- !u!114 &114807789424506296
@@ -221,7 +222,7 @@ MonoBehaviour:
   des: {fileID: 0}
   speed: 5
   dis: 3
-  agent: {fileID: 0}
+  agent: {fileID: 195278862201571432}
   argro: 0
 --- !u!114 &114854374156331000
 MonoBehaviour:

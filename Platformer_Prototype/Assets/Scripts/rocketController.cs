@@ -6,30 +6,32 @@ public class rocketController : MonoBehaviour {
     public float missileSpeed;
     public AudioSource audiosrc;
     public float radius;
-    public float power;
-    public float damage;
+    private float damage;
     public GameObject explosion;
     [SerializeField] private bool isMoving;
-	// Use this for initialization
+
 	void Start () {
         isMoving = true;
         Invoke("Explode", 4);
+        radius = PublicStats.FlameBallRadius;
+        damage = PublicStats.FlameBallDamage;
 	}
 	
-	// Update is called once per frame
 	void Update () {
         if(isMoving == true)
         {
             transform.Translate(Vector3.forward * missileSpeed * Time.deltaTime);
         }
-
 	}
+
     void OnCollisionEnter(Collision other)
     {
-        Explode();
+        if(other.transform.tag != "Turret")
+        {
+            Explode();
+        }
     }
-
-
+    
 
     void Explode()
     {
