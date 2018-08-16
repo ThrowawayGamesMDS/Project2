@@ -165,21 +165,27 @@ public class BallistaTurret : MonoBehaviour {
         {
             Instantiate(upgradeParticle, transform.position, upgradeParticle.transform.rotation);
             //turretDamage += turretDamage;
-            fireRate *= 0.5f;
+            fireRate -= fireRate / 3;
+            anim.speed += anim.speed / 3;
+            PublicStats.boltDamage *= 1.3f;
             myTurretLvl = eTurretLevel.Second;
         }
         if (lvl == eTurretLevel.Third)
         {
             Instantiate(upgradeParticle, transform.position, upgradeParticle.transform.rotation);
             //turretDamage += turretDamage;
-            fireRate *= 0.5f;
+            fireRate -= fireRate / 3;
+            anim.speed += anim.speed/3;
+            PublicStats.boltDamage *= 1.3f;
             myTurretLvl = eTurretLevel.Third;
         }
         if (lvl == eTurretLevel.Fourth)
         {
             Instantiate(upgradeParticle, transform.position, upgradeParticle.transform.rotation);
             //turretDamage += turretDamage;
-            fireRate *= 0.5f;
+            fireRate -= fireRate / 3;
+            anim.speed += anim.speed / 3;
+            PublicStats.boltDamage *= 1.3f;
             myTurretLvl = eTurretLevel.Fourth;
         }
     }

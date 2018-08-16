@@ -12,10 +12,18 @@ public class EnemyStats : MonoBehaviour {
     public GameObject MoneyPrefab;
     public float attackrange;
     public int attackdamage;
+    public bool isTank;
     void Start()
     {
         myAIMode = eAIMode.push;
-        m_fEnemyHealth = PublicStats.gruntHealth;
+        if(isTank)
+        {
+            m_fEnemyHealth = PublicStats.tankHealth;
+        }
+        else
+        {
+            m_fEnemyHealth = PublicStats.gruntHealth;
+        }
     }
     void Update()
     {

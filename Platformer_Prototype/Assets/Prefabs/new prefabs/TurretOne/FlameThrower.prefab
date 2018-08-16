@@ -28,23 +28,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1049412161690780
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4082077289666930}
-  - component: {fileID: 135477104184570244}
-  - component: {fileID: 114118052080534552}
-  m_Layer: 0
-  m_Name: target
-  m_TagString: Turret
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1068066439547790
 GameObject:
   m_ObjectHideFlags: 1
@@ -423,19 +406,6 @@ Transform:
   m_Father: {fileID: 4180874478877472}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4082077289666930
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1049412161690780}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.007000208, y: -0.47399998, z: 0.0014841557}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4889884864896176}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4099005472729842
 Transform:
   m_ObjectHideFlags: 1
@@ -541,7 +511,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1232069195149558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.9292173, y: 0.5, z: -8.2417345}
+  m_LocalPosition: {x: 50.510864, y: -4.090008, z: 26.05092}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4889884864896176}
@@ -616,7 +586,6 @@ Transform:
   - {fileID: 4188398927378352}
   - {fileID: 4329081367188842}
   - {fileID: 4712643192094180}
-  - {fileID: 4082077289666930}
   m_Father: {fileID: 4532961161077306}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -877,19 +846,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 50 gems
---- !u!114 &114118052080534552
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1049412161690780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c26b31b9284a14b41af87eb3d11c193a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  threat: 1
-  col: {fileID: 0}
 --- !u!114 &114134186749495384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1123,6 +1079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9948d8daf9e6c44b577daae5632d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Targets: []
   myAIMode: 0
   myTurretLvl: 0
   damping: 100
@@ -1137,7 +1094,6 @@ MonoBehaviour:
   upgradeParticle: {fileID: 1336805535673476, guid: cef940a0c49d5f3498866088dfc7b935,
     type: 2}
   m_fOverallDamage: 0
-  Targets: []
   lookpos: {x: 0, y: 0, z: 0}
 --- !u!114 &114903433132981230
 MonoBehaviour:
@@ -1196,18 +1152,6 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 10.72
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135477104184570244
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1049412161690780}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &137284406706799474
 SkinnedMeshRenderer:

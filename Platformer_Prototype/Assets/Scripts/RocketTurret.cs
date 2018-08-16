@@ -171,7 +171,7 @@ public class RocketTurret : MonoBehaviour {
         if (lvl == eTurretLevel.Second)
         {
             Instantiate(upgradeParticle, transform.position, upgradeParticle.transform.rotation);
-            PublicStats.FlameBallDamage = 80;
+            PublicStats.FlameBallDamage = 70;
             PublicStats.FlameBallRadius += 1;
             //turretDamage += turretDamage;
             fireRate -= fireRate *= 0.2f;
@@ -181,7 +181,7 @@ public class RocketTurret : MonoBehaviour {
         {
             Instantiate(upgradeParticle, transform.position, upgradeParticle.transform.rotation);
             PublicStats.FlameBallRadius += 1;
-            PublicStats.FlameBallDamage = 100;
+            PublicStats.FlameBallDamage = 80;
             //turretDamage += turretDamage;
             fireRate -= fireRate *= 0.2f;
             myTurretLvl = eTurretLevel.Third;
@@ -190,7 +190,7 @@ public class RocketTurret : MonoBehaviour {
         {
             Instantiate(upgradeParticle, transform.position, upgradeParticle.transform.rotation);
             PublicStats.FlameBallRadius += 1;
-            PublicStats.FlameBallDamage = 150;
+            PublicStats.FlameBallDamage = 90;
             //turretDamage += turretDamage;
             fireRate -= fireRate *= 0.2f;
             myTurretLvl = eTurretLevel.Fourth;

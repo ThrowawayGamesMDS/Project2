@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class endzone : MonoBehaviour {
     public static float health;
@@ -11,9 +12,9 @@ public class endzone : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (health == 0)
+        if (health <= 0)
         {
-            
+            SceneManager.LoadScene(3);
         }
     }
     //void OnCollisionEnter(Collision col)

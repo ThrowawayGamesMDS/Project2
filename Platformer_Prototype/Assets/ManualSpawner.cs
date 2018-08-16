@@ -5,7 +5,7 @@ using UnityEngine;
 public class ManualSpawner : MonoBehaviour {
     public GameObject Grunt;
     public GameObject Tank;
-    public GameObject Kamikazi;
+    //public GameObject Kamikazi;
     public float timer;
     public bool hasInvoked;
     public List<GameObject> SpawnedEnemies;
@@ -30,7 +30,6 @@ public class ManualSpawner : MonoBehaviour {
             yield return new WaitForSeconds(0.5f);
             Instantiate(Grunt, transform.position, transform.rotation);
         }
-        StartCoroutine(SpawnKamikazi());
         
     }
     IEnumerator SpawnTank()
@@ -42,13 +41,5 @@ public class ManualSpawner : MonoBehaviour {
         }
         yield return new WaitForSeconds(0.2f);
         StartCoroutine(SpawnGrunt());
-    }
-    IEnumerator SpawnKamikazi()
-    {
-        for (int i = 0; i < RoundSystem.g_iKamikaziThisRound; i++)
-        {
-            yield return new WaitForSeconds(0.2f);
-            Instantiate(Kamikazi, transform.position, transform.rotation);
-        }
     }
 }

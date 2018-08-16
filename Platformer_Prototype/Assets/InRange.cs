@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class InRange : MonoBehaviour {
     public int threat;
-    public MeshCollider col;
+    public SphereCollider col;
 	// Use this for initialization
 	void Start () {
-        col.GetComponent<Collider>();
+        col = gameObject.GetComponent<SphereCollider>();
 
     }
 
@@ -30,7 +30,7 @@ public class InRange : MonoBehaviour {
           
             print(other.GetComponent<EnemyStats>().myAIMode);
             
-            other.GetComponent<EnemyStats>().Targets.Insert(other.GetComponent<EnemyStats>().Targets.Count, gameObject);
+            other.GetComponent<EnemyStats>().Targets.Insert(other.GetComponent<EnemyStats>().Targets.Count, other.gameObject);
 
             other.GetComponent<EnemyStats>().priority.Insert(other.GetComponent<EnemyStats>().priority.Count, threat);
 

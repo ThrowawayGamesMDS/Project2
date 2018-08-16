@@ -3,15 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerUpgrade : MonoBehaviour {
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        
 
+	void Update () {
         if (Input.GetKeyDown(KeyCode.E))
         {
             RaycastHit hit;
@@ -126,6 +119,56 @@ public class PlayerUpgrade : MonoBehaviour {
                                 }
                             }
 
+
+                            if (hit.transform.gameObject.GetComponent<BallistaTurret>() != null)
+                            {
+                                switch (hit.transform.gameObject.GetComponent<BallistaTurret>().myTurretLvl)
+                                {
+                                    case BallistaTurret.eTurretLevel.First:
+                                        {
+                                            if (PublicStats.g_fResourceCount >= 50)
+                                            {
+                                                print("upgrade turret to level 2");
+                                                PublicStats.g_fResourceCount -= 50;
+                                                print("balance: " + PublicStats.g_fResourceCount);
+                                                hit.transform.gameObject.GetComponent<BallistaTurret>().UpgradeTo(BallistaTurret.eTurretLevel.Second);
+                                            }
+                                            break;
+                                        }
+                                    case BallistaTurret.eTurretLevel.Second:
+                                        {
+                                            if (PublicStats.g_fResourceCount >= 100)
+                                            {
+                                                print("upgrade turret to level 3");
+                                                PublicStats.g_fResourceCount -= 100;
+                                                print("balance: " + PublicStats.g_fResourceCount);
+                                                hit.transform.gameObject.GetComponent<BallistaTurret>().UpgradeTo(BallistaTurret.eTurretLevel.Third);
+                                            }
+                                            break;
+                                        }
+                                    case BallistaTurret.eTurretLevel.Third:
+                                        {
+                                            if (PublicStats.g_fResourceCount >= 150)
+                                            {
+                                                print("upgrade turret to level 4");
+                                                PublicStats.g_fResourceCount -= 150;
+                                                print("balance: " + PublicStats.g_fResourceCount);
+                                                hit.transform.gameObject.GetComponent<BallistaTurret>().UpgradeTo(BallistaTurret.eTurretLevel.Fourth);
+                                            }
+                                            break;
+                                        }
+                                    case BallistaTurret.eTurretLevel.Fourth:
+                                        {
+                                            print("cannot upgrade any further");
+                                            print("balance: " + PublicStats.g_fResourceCount);
+                                            break;
+                                        }
+                                    default:
+                                        {
+                                            break;
+                                        }
+                                }
+                            }
                             break;
                         }
                 }

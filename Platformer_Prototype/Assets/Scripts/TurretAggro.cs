@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TurretAggro : MonoBehaviour
 {
-
+    public List<GameObject> Targets;
     public enum eAIMode { Idle, Alert, Aggro };
     public enum eTurretLevel { First, Second, Third, Fourth };
     public eAIMode myAIMode;
@@ -21,7 +21,7 @@ public class TurretAggro : MonoBehaviour
     public GameObject flames;
     public GameObject upgradeParticle;
     public float m_fOverallDamage;
-    public List <GameObject> Targets;
+    
     public Vector3 lookpos;
     int delay = 150;
     bool alive = true;
@@ -37,7 +37,6 @@ public class TurretAggro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         if(Targets.Count > 0)
         {
             if(Targets[0] == null)

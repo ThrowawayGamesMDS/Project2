@@ -16,6 +16,7 @@ public class PublicStats : MonoBehaviour {
     public static float tankAS;
     public static float FlameBallDamage;
     public static float FlameBallRadius;
+    public static float boltDamage;
     
 
     public float startingMoney;
@@ -34,6 +35,7 @@ public class PublicStats : MonoBehaviour {
         tankAS = 2.5f;
         FlameBallDamage = 70;
         FlameBallRadius = 4;
+        boltDamage = 50;
        
     }
 	

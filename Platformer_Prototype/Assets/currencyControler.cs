@@ -11,7 +11,7 @@ public class currencyControler : MonoBehaviour {
 	void Start () {
         isAttracted = false;
         player = GameObject.Find("PlayerCentre");
-        value = (100 * RoundSystem.g_fRound);
+        value = 50;
 	}
 	
 	// Update is called once per frame
