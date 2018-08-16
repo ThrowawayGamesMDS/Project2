@@ -59,6 +59,7 @@ public class enemyWalk : MonoBehaviour
                             if (hit.transform.tag == "Goal")
                             {
                                 endzone.health--;
+                                RoundSystem.g_iAliveUnits--;
                                 Destroy(gameObject);
                             }
                             //print("check point");

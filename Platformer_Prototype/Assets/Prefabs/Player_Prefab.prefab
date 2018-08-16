@@ -72,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1870803275146124}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 2.41, z: -13.2}
+  m_LocalPosition: {x: 79.7, y: 0.9, z: -23.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4955020125479772}
@@ -248,25 +248,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c96124e65d511514981141ac9560e127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_bPlayerPlacingTurret: 0
   m_goPossibleTurrets:
-  - {fileID: 1600842792024738, guid: 754c11d31e361e74686f31460b925abd, type: 2}
-  - {fileID: 1492170446996484, guid: 9b2abb7cb53a515408b4ae75402ccd31, type: 2}
+  - {fileID: 1232069195149558, guid: 0c48f337f0d02234bbb81f9f529101f3, type: 2}
+  - {fileID: 1753042606354072, guid: 508e22afc22aec24c89ff65f405a5315, type: 2}
   - {fileID: 1719476638091168, guid: 6cf22cfdf914d12449b23d3ce1a89aa0, type: 2}
+  - {fileID: 1606890482593328, guid: 9fdd8c63d4f2ac549a42eb0c4c1a9ca3, type: 2}
   m_goTurretPlacementOk:
-  - {fileID: 1815941077914170, guid: 6ed9499180289eb4b8dc3d91adc9ab02, type: 2}
-  - {fileID: 1444774387120084, guid: b6974b44357cebc4fbe90e38799c5e61, type: 2}
+  - {fileID: 1386301352010802, guid: c78a33f1198823c46a41064c52919d0e, type: 2}
+  - {fileID: 1906416485953760, guid: d90a1567080b20847bd1814225b39314, type: 2}
   - {fileID: 1098105365932554, guid: 2b5854e26f5afed449e2ea7f0786719c, type: 2}
+  - {fileID: 1049730329211656, guid: 468e00b6935147645bda48ed627d7955, type: 2}
   m_goTurretPlacementBad:
-  - {fileID: 1191505457910884, guid: 8aba97fb66ccfd0458624a114ccaa325, type: 2}
-  - {fileID: 1000901086105270, guid: 60dbdb9ea48f0f34fb2c8429ea1ac77d, type: 2}
+  - {fileID: 1651905581735070, guid: 5cfff5822c3e77341b2496cbdba648e1, type: 2}
+  - {fileID: 1438078816019016, guid: 12de0fefe85fe9e409b89d3886a9862d, type: 2}
   - {fileID: 1759940439103726, guid: e1f3189d2e47352429393fd8beffb48e, type: 2}
+  - {fileID: 1802999878822122, guid: 1bae3d712d9745c48a0d713c82837d3c, type: 2}
   m_goPlacementDefault: {fileID: 0}
   m_goCurrentlyPlacing: {fileID: 0}
+  m_goParticleEffects:
+  - {fileID: 1607113518928506, guid: 07652fda815a25242bb2036b3cf5c22e, type: 2}
+  m_goSuccessfulBuild: {fileID: 0}
   m_goPlacedTurrets: []
   m_iTurretsPlaced: 0
   m_iMaxTurretsPlaceable: 0
   m_iCurrentlyPlacing: 0
+  m_ePlayerState: 0
 --- !u!114 &114492459749361590
 MonoBehaviour:
   m_ObjectHideFlags: 1

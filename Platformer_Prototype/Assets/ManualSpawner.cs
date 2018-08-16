@@ -7,28 +7,19 @@ public class ManualSpawner : MonoBehaviour {
     public GameObject Tank;
     public GameObject Kamikazi;
     public float timer;
-    public bool isManual;
     public bool hasInvoked;
     public List<GameObject> SpawnedEnemies;
     public int enemiesAlive;
-	
+    void Start()
+    {
+        hasInvoked = true;
+    }
 	// Update is called once per frame
 	void Update () {
-        if(isManual)
+        if(!hasInvoked)
         {
-            
-        }
-        else
-        {
-            if(!isManual)
-            {
-                if(!hasInvoked)
-                {
-                    hasInvoked = true;
-                    StartCoroutine(SpawnTank());
-                }
-                
-            }
+            hasInvoked = true;
+            StartCoroutine(SpawnTank());
         }
 	}
 

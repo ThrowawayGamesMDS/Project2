@@ -76,7 +76,7 @@ public class BallistaTurret : MonoBehaviour {
                         if (Time.time > turretCooldown)
                         {
                             Vector3 rayOrigin = endofturret.position;
-                            Vector3 rayDirection = Targets[0].transform.position - endofturret.position;
+                            Vector3 rayDirection = Targets[0].transform.GetChild(0).position - endofturret.position;
                             RaycastHit hit;
                             if (Physics.Raycast(endofturret.position, rayDirection, out hit, 100))
                             {
