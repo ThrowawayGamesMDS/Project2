@@ -1,0 +1,168 @@
+fileFormatVersion: 2
+guid: c625d405699542049b77c18cd461a699
+timeCreated: 1534386988
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Hands
+    100004: L_Hand
+    100006: L_Index_1
+    100008: L_Index_2
+    100010: L_Index_3
+    100012: L_Middle_1
+    100014: L_Middle_2
+    100016: L_Middle_3
+    100018: L_Pinky_1
+    100020: L_Pinky_2
+    100022: L_Pinky_3
+    100024: L_Ring_1
+    100026: L_Ring_2
+    100028: L_Ring_3
+    100030: L_Thumb_1
+    100032: L_Thumb_2
+    100034: L_Thumb_3
+    100036: L_Wrist
+    100038: R_Hand
+    100040: R_Index_1
+    100042: R_Index_2
+    100044: R_Index_3
+    100046: R_Midde_1
+    100048: R_Middle_2
+    100050: R_Middle_3
+    100052: R_Pinky_1
+    100054: R_Pinky_2
+    100056: R_Pinky_3
+    100058: R_Ring_1
+    100060: R_Ring_2
+    100062: R_Ring_3
+    100064: R_Thumb_1
+    100066: R_thumb_2
+    100068: R_Thumb_3
+    100070: R_Wrist
+    100072: Root
+    400000: //RootNode
+    400002: Hands
+    400004: L_Hand
+    400006: L_Index_1
+    400008: L_Index_2
+    400010: L_Index_3
+    400012: L_Middle_1
+    400014: L_Middle_2
+    400016: L_Middle_3
+    400018: L_Pinky_1
+    400020: L_Pinky_2
+    400022: L_Pinky_3
+    400024: L_Ring_1
+    400026: L_Ring_2
+    400028: L_Ring_3
+    400030: L_Thumb_1
+    400032: L_Thumb_2
+    400034: L_Thumb_3
+    400036: L_Wrist
+    400038: R_Hand
+    400040: R_Index_1
+    400042: R_Index_2
+    400044: R_Index_3
+    400046: R_Midde_1
+    400048: R_Middle_2
+    400050: R_Middle_3
+    400052: R_Pinky_1
+    400054: R_Pinky_2
+    400056: R_Pinky_3
+    400058: R_Ring_1
+    400060: R_Ring_2
+    400062: R_Ring_3
+    400064: R_Thumb_1
+    400066: R_thumb_2
+    400068: R_Thumb_3
+    400070: R_Wrist
+    400072: Root
+    4300000: Hands
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Hands
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 7f517676bcc4d6a4b9722c5ef85be02e, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
