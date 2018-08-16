@@ -131,47 +131,50 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void UpdateTurretPlacementDefault(Vector3 _vec3DesiredPos)
+    private bool CheckForTurretsInPlacingRegion(Vector3 _vec3PlacementPos)
     {
-        m_goPlacementDefault.transform.position = _vec3DesiredPos;
+        bool _bTurretExists = false;
         for (int i = 0; i < m_iTurretsPlaced; i++)
         {
-            //if ((m_vec3Pos.x < m_goPlacedTurrets[i].transform.position.x + 3.0f && m_vec3Pos.x > m_goPlacedTurrets[i].transform.position.x - 3.0f) && (m_vec3Pos.z < m_goPlacedTurrets[i].transform.position.z + 3.0f && m_vec3Pos.z > m_goPlacedTurrets[i].transform.position.z - 3.0f))
-            if (Vector3.Distance(_vec3DesiredPos, m_goPlacedTurrets[i].transform.position) <= 1.7f || PublicStats.g_fResourceCount < 50)
+            if (Vector3.Distance(_vec3PlacementPos, m_goPlacedTurrets[i].transform.position) <= 1.7f)
             {
-                Destroy(m_goPlacementDefault);
-                m_goPlacementDefault = Instantiate(m_goTurretPlacementBad[m_iCurrentlyPlacing], _vec3DesiredPos, Quaternion.identity) as GameObject; 
                 // a turret already exists in the desired position
-                return;
-            }
-            else
-            {
-                Destroy(m_goPlacementDefault);
-                m_goPlacementDefault = Instantiate(m_goTurretPlacementOk[m_iCurrentlyPlacing], _vec3DesiredPos, Quaternion.identity) as GameObject;
+                _bTurretExists =  true;
             }
         }
+        return _bTurretExists;
     }
 
     private void CheckTurretBaseForGround()
     {
         if (m_ePlayerState == PlayerStates.DEFAULT)
         {
+            RaycastHit _rhCheck = GenerateRayCast(5.0f);
             Vector3 pos = Camera.main.transform.position + Camera.main.transform.forward * 5.0f;
-            if (pos.y < 0 || pos.y > 0)
+            pos.y = _rhCheck.point.y;
+            if (!CheckForTurretsInPlacingRegion(pos))
             {
-                pos.y = 0.5f;
+                m_goPlacementDefault = Instantiate(m_goTurretPlacementOk[m_iCurrentlyPlacing], pos, Quaternion.identity) as GameObject;
             }
-            m_goPlacementDefault = Instantiate(m_goTurretPlacementOk[m_iCurrentlyPlacing], pos, Quaternion.identity) as GameObject;
+            else
+            {
+                m_goPlacementDefault = Instantiate(m_goTurretPlacementBad[m_iCurrentlyPlacing], pos, Quaternion.identity) as GameObject;
+            }
         }
         else
         {
             Destroy(m_goPlacementDefault);
+            RaycastHit _rhCheck = GenerateRayCast(5.0f);
             Vector3 pos = Camera.main.transform.position + Camera.main.transform.forward * 5.0f;
-            if (pos.y < 0 || pos.y > 0)
+            pos.y = _rhCheck.point.y;
+            if (!CheckForTurretsInPlacingRegion(pos))
             {
-                pos.y = 0.5f;
+                m_goPlacementDefault = Instantiate(m_goTurretPlacementOk[m_iCurrentlyPlacing], pos, Quaternion.identity) as GameObject;
             }
-            m_goPlacementDefault = Instantiate(m_goTurretPlacementOk[m_iCurrentlyPlacing], pos, Quaternion.identity) as GameObject;
+            else
+            {
+                m_goPlacementDefault = Instantiate(m_goTurretPlacementBad[m_iCurrentlyPlacing], pos, Quaternion.identity) as GameObject;
+            }
         }
     }
     
@@ -254,12 +257,7 @@ public class PlayerController : MonoBehaviour
 
         if (m_ePlayerState == PlayerStates.PLACING)
         {
-            Vector3 pos = Camera.main.transform.position + Camera.main.transform.forward * 5.0f;
-            if (pos.y < 0 || pos.y > 0)
-            {
-                pos.y = 0.5f;
-            }
-            UpdateTurretPlacementDefault(pos);
+            CheckTurretBaseForGround();
         }
 
 		if (Input.GetKeyUp(KeyCode.Mouse0))
