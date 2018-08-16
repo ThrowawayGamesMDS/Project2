@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: fc61d3ee3d6912d4da0d17b1500cb1e3
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: NewYear 2017
+  fontNames:
+  - NewYear 2017
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 4728f10637dddad48b0e40a6f73eebd4, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -95,7 +95,8 @@ public class RocketTurret : MonoBehaviour {
                                     {
                                         Debug.DrawRay(endofturret.position, rayDirection, Color.yellow);
                                         //Debug.Log(hit.transform.name);
-                                        CheckHit(hit, rayDirection);
+                                        StartCoroutine(CheckHit(hit, rayDirection));
+                                        
 
                                         ////////////////////////////////////////////
                                         //draw raycast if player is in view, instantiate rocket that travels in direction of rayDirection,
@@ -112,7 +113,7 @@ public class RocketTurret : MonoBehaviour {
                                         Debug.DrawRay(endofturret.position, rayDirection, Color.white);
                                         CheckHit(hit, rayDirection);
                                     }
-                                    //anim.Play("Fire-Reload");
+                                    anim.Play("Fire-Reload");
                                     gunShotSound.Play();
                                     turretCooldown = Time.time + fireRate;
                                 }
@@ -152,8 +153,9 @@ public class RocketTurret : MonoBehaviour {
         }
     }
 
-    void CheckHit(RaycastHit hit, Vector3 rayDirection)
+    IEnumerator CheckHit(RaycastHit hit, Vector3 rayDirection)
     {
+        yield return new WaitForSeconds(0.55f);
         GameObject MissileObj = Instantiate(missile, endofturret.position, Quaternion.Euler(new Vector3(rayDirection.x, rayDirection.y, rayDirection.z)));
         MissileObj.transform.forward = rayDirection;
     }
@@ -169,22 +171,28 @@ public class RocketTurret : MonoBehaviour {
         if (lvl == eTurretLevel.Second)
         {
             Instantiate(upgradeParticle, transform.position, upgradeParticle.transform.rotation);
+            PublicStats.FlameBallDamage = 80;
+            PublicStats.FlameBallRadius += 1;
             //turretDamage += turretDamage;
-            fireRate *= 0.5f;
+            fireRate -= fireRate *= 0.2f;
             myTurretLvl = eTurretLevel.Second;
         }
         if (lvl == eTurretLevel.Third)
         {
             Instantiate(upgradeParticle, transform.position, upgradeParticle.transform.rotation);
+            PublicStats.FlameBallRadius += 1;
+            PublicStats.FlameBallDamage = 100;
             //turretDamage += turretDamage;
-            fireRate *= 0.5f;
+            fireRate -= fireRate *= 0.2f;
             myTurretLvl = eTurretLevel.Third;
         }
         if (lvl == eTurretLevel.Fourth)
         {
             Instantiate(upgradeParticle, transform.position, upgradeParticle.transform.rotation);
+            PublicStats.FlameBallRadius += 1;
+            PublicStats.FlameBallDamage = 150;
             //turretDamage += turretDamage;
-            fireRate *= 0.5f;
+            fireRate -= fireRate *= 0.2f;
             myTurretLvl = eTurretLevel.Fourth;
         }
     }

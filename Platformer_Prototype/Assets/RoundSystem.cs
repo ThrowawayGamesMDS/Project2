@@ -47,8 +47,7 @@ public class RoundSystem : MonoBehaviour {
         g_fRound += 1;
 
         PublicStats.EnemySpeed += PublicStats.EnemySpeed / 20;
-
-
+        
         PublicStats.gruntHealth += PublicStats.gruntHealth / 10;
         PublicStats.gruntAS += PublicStats.gruntAS / 20;
         PublicStats.gruntDPS += PublicStats.gruntDPS / 20;
