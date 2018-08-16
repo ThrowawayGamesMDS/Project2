@@ -1,5 +1,7 @@
 fileFormatVersion: 2
-guid: 329d442b385e26a46ad5a0011fdde915
+guid: e0502594f4ad2fb4597764fd81807624
+timeCreated: 1534377453
+licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -7,16 +9,20 @@ ModelImporter:
     100002: Box_Large
     400000: //RootNode
     400002: Box_Large
-    2100000: Box_LargeMat
     2300000: Box_Large
     3300000: Box_Large
     4300000: Box_Large
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Box_LargeMat
+    second: {fileID: 2100000, guid: 324f741487c806f4db81dfd755f2bc7a, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -30,7 +36,6 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -42,7 +47,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.008
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -55,8 +60,6 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
-    preserveHierarchy: 0
-    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
