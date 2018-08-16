@@ -233,6 +233,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void RotateDefaultPlacementDirection()
+    {
+        if (m_goPlacementDefault.transform.rotation != GameObject.FindGameObjectWithTag("Player").transform.rotation)
+        {
+            m_goPlacementDefault.transform.rotation = GameObject.FindGameObjectWithTag("Player").transform.rotation;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -262,6 +270,7 @@ public class PlayerController : MonoBehaviour
         if (m_ePlayerState == PlayerStates.PLACING)
         {
             CheckTurretBaseForGround();
+            RotateDefaultPlacementDirection();
             HandleTurretSwitching();
         }
 
