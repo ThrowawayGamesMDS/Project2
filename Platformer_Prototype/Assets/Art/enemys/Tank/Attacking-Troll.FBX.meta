@@ -1,0 +1,224 @@
+fileFormatVersion: 2
+guid: 92b9eac0f20958041b82205c01f71c5f
+timeCreated: 1534381631
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Base HumanBack_Attachment1
+    100004: Base HumanHead
+    100006: Base HumanLCalf
+    100008: Base HumanLCollarbone
+    100010: Base HumanLDigit11
+    100012: Base HumanLDigit11 1
+    100014: Base HumanLDigit12
+    100016: Base HumanLDigit21
+    100018: Base HumanLDigit22
+    100020: Base HumanLDigit23
+    100022: Base HumanLDigit31
+    100024: Base HumanLDigit32
+    100026: Base HumanLDigit33
+    100028: Base HumanLDigit41
+    100030: Base HumanLDigit42
+    100032: Base HumanLDigit43
+    100034: Base HumanLFoot
+    100036: Base HumanLForearm
+    100038: Base HumanLPalm
+    100040: Base HumanLThigh
+    100042: Base HumanLUpperarm
+    100044: Base HumanNeck1
+    100046: Base HumanNeck2
+    100048: Base HumanPelvis
+    100050: Base HumanRArmCollarbone
+    100052: Base HumanRArmDigit11
+    100054: Base HumanRArmDigit12
+    100056: Base HumanRArmDigit21
+    100058: Base HumanRArmDigit22
+    100060: Base HumanRArmDigit23
+    100062: Base HumanRArmDigit31
+    100064: Base HumanRArmDigit32
+    100066: Base HumanRArmDigit33
+    100068: Base HumanRArmDigit41
+    100070: Base HumanRArmDigit42
+    100072: Base HumanRArmDigit43
+    100074: Base HumanRArmForearm
+    100076: Base HumanRArmPalm
+    100078: Base HumanRArmUpperarm
+    100080: Base HumanRibcage
+    100082: Base HumanRight_Hand_Attachment
+    100084: Base HumanRLegCalf
+    100086: Base HumanRLegDigit11
+    100088: Base HumanRLegFoot
+    100090: Base HumanRLegThigh
+    100092: Base HumanSpine1
+    100094: Base HumanSpine2
+    100096: Base HumanSpine3
+    100098: Base HumanSpine4
+    100100: default
+    400000: //RootNode
+    400002: Base HumanBack_Attachment1
+    400004: Base HumanHead
+    400006: Base HumanLCalf
+    400008: Base HumanLCollarbone
+    400010: Base HumanLDigit11
+    400012: Base HumanLDigit11 1
+    400014: Base HumanLDigit12
+    400016: Base HumanLDigit21
+    400018: Base HumanLDigit22
+    400020: Base HumanLDigit23
+    400022: Base HumanLDigit31
+    400024: Base HumanLDigit32
+    400026: Base HumanLDigit33
+    400028: Base HumanLDigit41
+    400030: Base HumanLDigit42
+    400032: Base HumanLDigit43
+    400034: Base HumanLFoot
+    400036: Base HumanLForearm
+    400038: Base HumanLPalm
+    400040: Base HumanLThigh
+    400042: Base HumanLUpperarm
+    400044: Base HumanNeck1
+    400046: Base HumanNeck2
+    400048: Base HumanPelvis
+    400050: Base HumanRArmCollarbone
+    400052: Base HumanRArmDigit11
+    400054: Base HumanRArmDigit12
+    400056: Base HumanRArmDigit21
+    400058: Base HumanRArmDigit22
+    400060: Base HumanRArmDigit23
+    400062: Base HumanRArmDigit31
+    400064: Base HumanRArmDigit32
+    400066: Base HumanRArmDigit33
+    400068: Base HumanRArmDigit41
+    400070: Base HumanRArmDigit42
+    400072: Base HumanRArmDigit43
+    400074: Base HumanRArmForearm
+    400076: Base HumanRArmPalm
+    400078: Base HumanRArmUpperarm
+    400080: Base HumanRibcage
+    400082: Base HumanRight_Hand_Attachment
+    400084: Base HumanRLegCalf
+    400086: Base HumanRLegDigit11
+    400088: Base HumanRLegFoot
+    400090: Base HumanRLegThigh
+    400092: Base HumanSpine1
+    400094: Base HumanSpine2
+    400096: Base HumanSpine3
+    400098: Base HumanSpine4
+    400100: default
+    4300000: default
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: default
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: default
+    second: {fileID: 2100000, guid: 27b46222cb99b3145b5ff53fa8d29086, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
