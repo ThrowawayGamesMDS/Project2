@@ -6,15 +6,10 @@ using UnityEngine.UI;
 public class updateUIText : MonoBehaviour {
     public Text title;
     public Text price;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {
-		switch(transform.parent.transform.parent.GetChild(0).GetComponent<RocketTurret>().myTurretLvl)
+		switch(transform.parent.transform.parent.GetComponent<RocketTurret>().myTurretLvl)
         {
             case (RocketTurret.eTurretLevel.First):
                 {

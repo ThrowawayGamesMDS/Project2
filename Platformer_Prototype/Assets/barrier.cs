@@ -8,7 +8,7 @@ public class barrier : MonoBehaviour {
     float delay = 200;
     // Use this for initialization
     void Start () {
-        m_ObjectCollider.GetComponent<Collider>();
+        //m_ObjectCollider.GetComponent<Collider>();
 
     }
 	
