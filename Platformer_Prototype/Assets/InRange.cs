@@ -24,16 +24,18 @@ public class InRange : MonoBehaviour {
             print("inRange");
             if (other.GetComponent<EnemyStats>().myAIMode != EnemyStats.eAIMode.attack)
             {
+                
                 other.GetComponent<EnemyStats>().myAIMode = EnemyStats.eAIMode.attack;
             }
           
             print(other.GetComponent<EnemyStats>().myAIMode);
-
+            
             other.GetComponent<EnemyStats>().Targets.Insert(other.GetComponent<EnemyStats>().Targets.Count, gameObject);
 
             other.GetComponent<EnemyStats>().priority.Insert(other.GetComponent<EnemyStats>().priority.Count, threat);
 
             other.GetComponent<enemyWalk>().setupattacker();
+            other.GetComponent<enemyWalk>().enemy.SetInteger("speed", 0);
         }
     }
     void OnTriggerExit(Collider other)
