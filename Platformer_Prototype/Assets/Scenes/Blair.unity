@@ -4513,14 +4513,14 @@ MeshRenderer:
   m_GameObject: {fileID: 840808822}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: fcef1d38b25093545acd65c3cca6cb6a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10104,6 +10104,7 @@ GameObject:
   - component: {fileID: 1745464774}
   - component: {fileID: 1745464773}
   - component: {fileID: 1745464775}
+  - component: {fileID: 1745464776}
   m_Layer: 0
   m_Name: Stats
   m_TagString: Untagged
@@ -10148,6 +10149,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spawner: {fileID: 1218749205}
+--- !u!114 &1745464776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1745464772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad233f035f2e2064f9c1aa1c954ea06c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1757833499
 GameObject:
   m_ObjectHideFlags: 0
