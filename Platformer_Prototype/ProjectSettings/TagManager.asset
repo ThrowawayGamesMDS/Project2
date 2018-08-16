@@ -20,8 +20,6 @@ TagManager:
   - Barriers
   - TURR_BASE
   - BombEnemy
-  - RTurret
-  - BTurret
   layers:
   - Default
   - TransparentFX

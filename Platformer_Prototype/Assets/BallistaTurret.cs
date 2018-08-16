@@ -20,8 +20,6 @@ public class BallistaTurret : MonoBehaviour {
     public GameObject flames;
     public GameObject upgradeParticle;
     public List<GameObject> Targets;
-    int delay = 150;
-    bool alive = true;
 
     // Use this for initialization
     void Start()
@@ -128,19 +126,8 @@ public class BallistaTurret : MonoBehaviour {
     {
         //give player xp
         //spawn any particle effects
-       
-        gameObject.GetComponentInChildren<InRange>().destorycol();
-        alive = false;
-        if (delay == 0)
-        {
-            //Instantiate(flames, transform.position, Quaternion.identity, transform.parent);
-            Instantiate(flames, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-        }
-        else
-        {
-            delay--;
-        }
+        Instantiate(flames, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 
     void OnTriggerEnter(Collider other)

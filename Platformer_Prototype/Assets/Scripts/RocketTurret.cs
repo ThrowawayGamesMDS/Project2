@@ -18,8 +18,6 @@ public class RocketTurret : MonoBehaviour {
     public float f_TurretHealth;
     public GameObject upgradeParticle;
     public List<GameObject> Targets;
-    int delay = 150;
-    bool alive = true;
 
     // Use this for initialization
     void Start()
@@ -136,18 +134,7 @@ public class RocketTurret : MonoBehaviour {
     {
         //give player xp
         //spawn any particle effects
-        gameObject.GetComponentInChildren<InRange>().destorycol();
-        alive = false;
-        if (delay == 0)
-        {
-            //Instantiate(flames, transform.position, Quaternion.identity, transform.parent);
-            Destroy(gameObject);
-        }
-        else
-        {
-            delay--;
-        }
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 
     void OnTriggerEnter(Collider other)
