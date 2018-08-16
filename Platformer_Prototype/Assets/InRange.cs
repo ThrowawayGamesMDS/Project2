@@ -30,7 +30,7 @@ public class InRange : MonoBehaviour {
           
             print(other.GetComponent<EnemyStats>().myAIMode);
             
-            other.GetComponent<EnemyStats>().Targets.Insert(other.GetComponent<EnemyStats>().Targets.Count, other.gameObject);
+            other.GetComponent<EnemyStats>().Targets.Insert(other.GetComponent<EnemyStats>().Targets.Count, gameObject);
 
             other.GetComponent<EnemyStats>().priority.Insert(other.GetComponent<EnemyStats>().priority.Count, threat);
 
