@@ -115,6 +115,11 @@ public class PlayerController : MonoBehaviour
                             PublicStats.g_fResourceCount -= 100;
                             break;
                         }
+                    case 3:
+                        {
+                            PublicStats.g_fResourceCount -= 50;
+                            break;
+                        }
                 }
             }
         }
